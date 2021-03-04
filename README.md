@@ -76,111 +76,21 @@ print(conf.get('param','model'))  # bow
 
 > > > train_5500.txt
 
-> > > bow.config
+> > > bow.config							bow配置文件
 
-> > > bilstm.config
+> > > bilstm.config						bilstm配置文件
 
 > > src
 
-> > > question_classifier.py
+> > > question_classifier.py		程序主入口文件，捕获命令行参数
 
-> > > ssentence_processing.py
+> > > pre_processing.py			 数据预处理文件
 
-> > > split_data.py
-> >
+> > > split_file.py						 训练集验证集切分文件
+
+> > > tokenization.py				  数据token化文件
+
+> > > word_embeddings.py	   word embedding方法文件
+
 > > README.md
 
-
-
-### 文件介绍
-
-#### question_classifier.py
-
-本文件目前还没有实现函数，后面会用于设计TA调用的入口函数
-
-```python
-from configparser import ConfigParser
-
-# conf can be used in other py file to get the parameters.
-conf = ConfigParser()
-conf.read('../data/bow.config')
-```
-
-#### sentence_processing.py
-
-> sentenceProcessing函数
-
-```python
-def sentenceProcessing(file):
-    labels = []
-    sentences = []
-    with open(file, 'r') as f:
-        # result = f.read()
-        # result = re.sub('[?]','',result)
-        for line in f.readlines():
-            line = line.strip('\n')
-            # print(line)
-            # print(line.split(' ',1))
-            labels.append(line.split(' ', 1)[0])
-            sentences.append(line.split(' ', 1)[1])
-    return labels,sentences
-```
-
-本方法用于**分割**label和sentence, 最终把分割后的两个数组返回。
-
-> lower_first_letter函数
-
-```python
-# 首字母小写
-def lower_first_letter(sentences):
-    for i in range(len(sentences)):
-        tmp = list(sentences[i])
-        tmp[0] = tmp[0].lower()
-        sentences[i] = ''.join(tmp)
-    return sentences
-```
-
-用于将每个句子中的首字母小写后返回。
-
-#### split_file.py
-
-> get_train_dev函数
-
-```python
-def get_train_dev():
-    path = os.path.join(os.getcwd(),"..","data", "train_5500.txt")
-    f = open(path)
-    lines = f.readlines()
-    f.close()
-    train, dev = split(lines, shuffle=True, ratio=0.9)
-
-    # read
-    file = open(conf.get('param','path_train'), 'w')
-    for i in range(len(train)):
-        file.write(train[i])
-    file.close()
-
-    file = open(conf.get('param','path_dev'), 'w')
-    for i in range(len(dev)):
-        file.write(dev[i])
-    file.close()
-```
-
-用于将train_5500.txt随机切分为9:1结构，并生成train.txt和dev.txt
-
-> random_split函数
-
-```python
-def random_split(full_list, shuffle=False, ratio=0):
-    n_total = len(full_list)
-    offset = int(n_total * ratio)
-    if n_total == 0 or offset < 1:
-        return [], full_list
-    if shuffle:
-        random.shuffle(full_list)
-    sublist_1 = full_list[:offset]
-    sublist_2 = full_list[offset:]
-    return sublist_1, sublist_2
-```
-
-随机切分函数，供get_train_dev函数调用。
