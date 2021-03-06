@@ -5,6 +5,16 @@ from src.tokenization import tokenization
 from src.question_classifier import conf
 from src.word_embeddings import randomly_initialised_vectors
 import numpy as np
+'''
+
+input:
+wordToIdx (dict): the index in word Vector matrix of the word    
+token_of_sentences (n*x): token matrix
+wordVec(n*dimension): wordVec
+
+output:
+bag of word matrix: n*dimenson
+'''
 def bag_of_words(wordToIdx,token_of_sentences,wordVec):
     vecOfSentences = []
     for sentences in token_of_sentences:
@@ -14,7 +24,7 @@ def bag_of_words(wordToIdx,token_of_sentences,wordVec):
                 vector += wordVec[wordToIdx.get(token)]
         vecOfSentences.append(vector)
     vecOfSentences = np.array(vecOfSentences)
-    print(vecOfSentences)
+    return vecOfSentences
 
 
 if __name__ == '__main__':
@@ -24,11 +34,9 @@ if __name__ == '__main__':
     read_stoplist = read_stoplist()
     tokens,token_of_sentences = tokenization(sentences,read_stoplist)
 
-    #print('tokens: ', tokens)
-    # print('token_of_sentences: ', len(token_of_sentences)) # 4905行
-
     # need
     wordVec,wordToIdx = randomly_initialised_vectors(tokens,threshold=20)
     # print(len(wordVec)) #  183 * 5
 
-    bag_of_words(wordToIdx,token_of_sentences,wordVec)
+    bagOfWord = bag_of_words(wordToIdx,token_of_sentences,wordVec)
+    print(bagOfWord)
