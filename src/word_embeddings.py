@@ -27,7 +27,7 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     for key in wordCountDict.keys():
         wordToIx[key] = i
         i = i+1
-    embeds = nn.Embedding(len(wordToIx), 5)  # 2 words in vocab, 5 dimensional embeddingsr
+    embeds = nn.Embedding(len(wordToIx), int(conf.get("param","word_embedding_dim")))  # 2 words in vocab, 100 dimensional embeddingsr
     wordVectors = []
     for key in wordToIx:
         lookup_tensor = torch.tensor([wordToIx[key]], dtype=torch.long)

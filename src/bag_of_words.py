@@ -5,6 +5,7 @@ from src.tokenization import tokenization
 from src.question_classifier import conf
 from src.word_embeddings import randomly_initialised_vectors
 import numpy as np
+from sklearn.svm import SVC
 '''
 
 input:
