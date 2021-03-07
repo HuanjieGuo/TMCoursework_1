@@ -92,5 +92,7 @@ print(conf.get('param','model'))  # bow
 
 > > > word_embeddings.py	   word embedding方法文件
 
+> > > bag_of_words.py   			bag of words,输出句子vector
+
 > > README.md
 

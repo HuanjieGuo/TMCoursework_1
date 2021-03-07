@@ -2,6 +2,12 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from src.pre_processing import sentence_processing
+from src.pre_processing import lower_first_letter
+from src.tokenization import tokenization
+from src.question_classifier import conf
+from src.tokenization import read_stoplist
+torch.manual_seed(1)
 '''
 input:
 tokens: token list
@@ -14,21 +20,19 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     for k in list(wordCountDict.keys()):  # 对字典a中的keys，相当于形成列表list
         if wordCountDict[k] < threshold:
             del wordCountDict[k]
+    # print(wordCountDict)
     wordToIx = {}
-    i = 0
+    wordToIx['UNK'] = 0
+    i = 1
     for key in wordCountDict.keys():
         wordToIx[key] = i
         i = i+1
-    embeds = nn.Embedding(len(wordToIx), 5)  # 2 words in vocab, 5 dimensional embeddings
+    embeds = nn.Embedding(len(wordToIx), 5)  # 2 words in vocab, 5 dimensional embeddingsr
     wordVectors = []
     for key in wordToIx:
         lookup_tensor = torch.tensor([wordToIx[key]], dtype=torch.long)
         embed = embeds(lookup_tensor)
         wordVectors.append(embed[:, :].tolist()[0])
-    return np.array(wordVectors)
+    return np.array(wordVectors),wordToIx
 
 
-if __name__ == '__main__':
-    tokens = ['what', 'product', 'did', 'Robert', 'Conrad', 'dare', 'people', 'to', 'knock', 'off', 'his', 'shoulder', 'what', 'caused', 'Titanic', 'to', 'sink', 'what', 'diamond', 'producer', 'controls', 'about']
-    wordVec = randomly_initialised_vectors(tokens,threshold=2)
-    print(wordVec)
