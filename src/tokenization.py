@@ -15,12 +15,21 @@ tokenization：
 from src.pre_processing import sentence_processing, lower_first_letter
 import re
 from src.pre_processing import conf
+
 '''
 read_stoplist()
 作用：读取stop_words.txt中的停用词，并保存为list
 输入：
 输出：list
 '''
+
+'''
+tokenization:
+将句子划分成token，并用了另一个list保留每个句子的token
+去除token和sentences of token中的停用词、特殊符号
+'''
+
+
 def read_stoplist():
     file = conf.get('param', 'stop_words')
     stop_list = []
@@ -30,26 +39,46 @@ def read_stoplist():
             stop_list.append(line)
     return stop_list
 
+
 def tokenization(sentences, stop_list):
     # split using whitespace
     token_of_sentences = []
     for i in range(len(sentences)):
         sentences[i] = sentences[i].split(' ')
-        token_of_sentences.append(list(filter(lambda x: x!='?',sentences[i])))
+        token_of_sentences.append(list(filter(lambda x: x != '?', sentences[i])))
 
     # 2-d array -> 1-d array
     sentences = [b for a in sentences for b in a]
     # 进一步去除: , :  " ' ! ? 's a the an
+    reg = '[\s+ \, \. \: \" \' ! \?]+'
     for i in range(0, len(sentences)):
-        reg = '[\s+ \, \. \: \" \' ! \?]+'
         sentences[i] = re.sub(reg, '', sentences[i])
         # if sentences[i].lower() == 'a' or sentences[i].lower() == 'an' or sentences[i].lower() == 'the':
         #     sentences[i] = ''
         if (sentences[i].lower() in stop_list):
             sentences[i] = ''
+    for sen in range(0, len(token_of_sentences)):
+        for i in range(0, len(token_of_sentences[sen])):
+            token_of_sentences[sen][i] = re.sub(reg, '', token_of_sentences[sen][i])
+            if token_of_sentences[sen][i].lower() in stop_list:
+                token_of_sentences[sen][i] = ''
+
     # 删除空元素''和'``'
     sentences = [i for i in sentences if i != '' and i != '``']
-    return sentences,token_of_sentences
+    token_of_sentences = dellist(token_of_sentences)
+    return sentences, token_of_sentences
+
+
+# 去除token_of_sentences中的''和'``'
+def dellist(oldlist):
+    new2 = []
+    for sen in oldlist:
+        new1 = []
+        for x in sen:
+            if x != '' and x != '``':
+                new1.append(x)
+        new2.append(new1)
+    return new2
 
 
 '''
@@ -62,9 +91,8 @@ Tokenization 使用流程：
 if __name__ == '__main__':
     labels, sentences = sentence_processing(conf.get('param', 'path_train'))
     sentences = lower_first_letter(sentences)
-
     stop_list = read_stoplist()
-    tokens,token_of_sentences = tokenization(sentences,stop_list)
+    tokens, token_of_sentences = tokenization(sentences, stop_list)
 
     print('tokens: ', tokens)
     print('token_of_sentences: ', token_of_sentences)
