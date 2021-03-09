@@ -1,4 +1,4 @@
-import preprocessing
+from to_be_merged import preprocessing
 from collections import Counter
 import random
 
@@ -6,6 +6,8 @@ import numpy as np
 import torch
 from torch import nn
 import torch.optim as optim
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 
 def create_dict(sorted_words):
@@ -48,7 +50,7 @@ class SkipGram(nn.Module):
             
         # Sample words from our noise distribution
         noise_words = torch.multinomial(noise_dist, batch_size*n_samples, replacement=True).to('cpu')
-        print(noise_words.shape)
+        #print(noise_words.shape)
         noise_vectors = self.out_embedding_layer(noise_words).view(batch_size, n_samples, self.dim)
         return noise_vectors
 
@@ -163,8 +165,8 @@ def train(vocabulary_size, embedding_dim, sentences, idx_word, batch_size=20, ep
             optimizer.step()
 
             if steps % 1000 == 0:
-                print("Epoch: {}/{}".format(e+1, epochs))
-                print("Loss: ", loss.item()) # avg batch loss at this point in training
+                #print("Epoch: {}/{}".format(e+1, epochs))
+                #print("Loss: ", loss.item()) # avg batch loss at this point in training
                 valid_examples, valid_similarities = cosine_similarity(model.in_embedding_layer)
                 _, closest_idxes = valid_similarities.topk(5)
 
@@ -172,7 +174,7 @@ def train(vocabulary_size, embedding_dim, sentences, idx_word, batch_size=20, ep
                 for i, valid_idx in enumerate(valid_examples):
                     closest_words = [idx_word[idx.item()] for idx in closest_idxes[i]][1:]
                     print(idx_word[valid_idx.item()] + " | " + ', '.join(closest_words))
-                print("...\n")
+                #print("...\n")
     return model.in_embedding_layer.weight.to('cpu').data.numpy()
 
 
@@ -190,3 +192,6 @@ if __name__ == '__main__':
     sentences_in_idx = replace_words_with_idx(sentences, word_idx)
 
     word2vec = train(len(sorted_words), 200, sentences_in_idx, idx_word)
+    print('----------------')
+    print(word2vec.shape)
+    print(1)
