@@ -63,9 +63,9 @@ def tokenization(sentences, stop_list):
                 token_of_sentences[sen][i] = ''
 
     # 删除空元素''和'``'
-    sentences = [i for i in sentences if i != '' and i != '``']
+    tokens = [i for i in sentences if i != '' and i != '``']
     token_of_sentences = dellist(token_of_sentences)
-    return sentences, token_of_sentences
+    return tokens, token_of_sentences
 
 
 # 去除token_of_sentences中的''和'``'
