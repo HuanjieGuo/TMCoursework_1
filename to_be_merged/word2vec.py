@@ -189,6 +189,7 @@ if __name__ == '__main__':
     #         vocabulary.append(line.strip())
     sentences = preprocessing.get_preprocessed_sentences()
     sorted_words = preprocessing.make_vocabulary(sentences)
+    print(sorted_words)
     word_idx, idx_word = create_dict(sorted_words)
     print(word_idx)
     print(idx_word)

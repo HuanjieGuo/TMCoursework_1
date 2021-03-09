@@ -9,7 +9,7 @@ from src.tokenization import read_stoplist
 from src.tokenization import tokenization
 from src.question_classifier import conf
 from to_be_merged import word2vec
-from src.sentences_to_bow import randomly_initialised_vectors
+torch.manual_seed(1)
 '''
 本文件中，目前对initialised_word_vector进行了测试
 '''
@@ -37,8 +37,7 @@ test_tokens, test_token_of_sentences = tokenization(test_sentences, read_stoplis
 sentences = word2vec.preprocessing.get_preprocessed_sentences()
 sorted_words = word2vec.preprocessing.make_vocabulary(sentences)
 word_idx, idx_word = word2vec.create_dict(sorted_words)
-print(word_idx)
-print(idx_word)
+
 sentences_in_idx = word2vec.replace_words_with_idx(sentences, word_idx)
 word2vec = word2vec.train(len(sorted_words), int(conf.get('param', 'word_embedding_dim')), sentences_in_idx, idx_word)
 print('----------------')
@@ -51,18 +50,21 @@ test_data = refactor(test_token_of_sentences, test_labels)
 
 '''
 分类器
-目前只有一层
+目前网络有一层隐藏层
 输入层数量为 配置文件里word_embedding_dim
 输出层数量为 label的种类数
 '''
 class BoWClassifier(nn.Module):
     def __init__(self, num_labels):
         super(BoWClassifier, self).__init__()
-        # self.linear = nn.Linear(vocab_size, num_labels)
-        self.linear = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
-    def forward(self, vec):
-        return self.linear(vec)
-        # return F.log_softmax(self.linear(vec), dim=1)
+        # n_hidden = 256
+        self.output = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
+        # self.predict = nn.Linear(n_hidden, num_labels)
+    def forward(self, input):
+        out = self.output(input)
+        # out = torch.sigmoid(out)
+        # out = self.predict(out)
+        return out
 
 
 '''
@@ -79,7 +81,7 @@ def make_bow_vector(sentence):
         if word in wordToIdx.keys():
             vector = wordVec[wordToIdx[word]]
             vec += vector
-        # else : vec += wordVec[0]
+        else : vec += wordVec[0]
     vec = vec / len(sentence)
 
     vec = torch.from_numpy(vec)

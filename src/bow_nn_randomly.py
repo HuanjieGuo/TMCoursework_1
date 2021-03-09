@@ -8,7 +8,9 @@ from src.pre_processing import lower_first_letter
 from src.tokenization import read_stoplist
 from src.tokenization import tokenization
 from src.question_classifier import conf
-from src.sentences_to_bow import randomly_initialised_vectors
+from src.word_embeddings import randomly_initialised_vectors
+
+torch.manual_seed(1)
 '''
 本文件中，目前对initialised_word_vector进行了测试
 '''
@@ -44,11 +46,14 @@ test_data = refactor(test_token_of_sentences, test_labels)
 class BoWClassifier(nn.Module):
     def __init__(self, num_labels):
         super(BoWClassifier, self).__init__()
-        # self.linear = nn.Linear(vocab_size, num_labels)
-        self.linear = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
-    def forward(self, vec):
-        return self.linear(vec)
-        # return F.log_softmax(self.linear(vec), dim=1)
+        # n_hidden = 256
+        self.output = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
+        # self.predict = nn.Linear(n_hidden, num_labels)
+    def forward(self, input):
+        out = self.output(input)
+        # out = torch.sigmoid(out)
+        # out = self.predict(out)
+        return out
 
 
 '''
@@ -67,9 +72,7 @@ def make_bow_vector(sentence):
             vec += vector
         else : vec += wordVec[0]
     vec = vec / len(sentence)
-
     vec = torch.from_numpy(vec)
-
     return vec.view(1, -1)
 
 
