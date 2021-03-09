@@ -30,7 +30,7 @@ tokens, token_of_sentences = tokenization(sentences, read_stoplist)
 test_tokens, test_token_of_sentences = tokenization(test_sentences, read_stoplist)
 
 # idx
-wordVec, wordToIdx = randomly_initialised_vectors(tokens, threshold=5)
+wordVec, wordToIdx = randomly_initialised_vectors(tokens, threshold=0)
 
 data = refactor(token_of_sentences, labels)
 test_data = refactor(test_token_of_sentences, test_labels)

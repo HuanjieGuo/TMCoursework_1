@@ -58,7 +58,7 @@ def make_vocabulary(sentences):
 
 
 def get_preprocessed_sentences():
-    with open('train_1000.txt', 'r',encoding="utf-8") as f:
+    with open('../to_be_merged/train_1000.txt', 'r',encoding="utf-8") as f:
         data = f.readlines()
         _, sentences = labels_extraction(data)
         sentences = remove_punctuations(sentences)

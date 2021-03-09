@@ -7,6 +7,7 @@ import torch
 from torch import nn
 import torch.optim as optim
 import os
+from src.question_classifier import conf
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 
@@ -173,7 +174,7 @@ def train(vocabulary_size, embedding_dim, sentences, idx_word, batch_size=20, ep
                 valid_examples, closest_idxes = valid_examples.to('cpu'), closest_idxes.to('cpu')
                 for i, valid_idx in enumerate(valid_examples):
                     closest_words = [idx_word[idx.item()] for idx in closest_idxes[i]][1:]
-                    print(idx_word[valid_idx.item()] + " | " + ', '.join(closest_words))
+                    #print(idx_word[valid_idx.item()] + " | " + ', '.join(closest_words))
                 #print("...\n")
     return model.in_embedding_layer.weight.to('cpu').data.numpy()
 
@@ -189,9 +190,10 @@ if __name__ == '__main__':
     sentences = preprocessing.get_preprocessed_sentences()
     sorted_words = preprocessing.make_vocabulary(sentences)
     word_idx, idx_word = create_dict(sorted_words)
+    print(word_idx)
+    print(idx_word)
     sentences_in_idx = replace_words_with_idx(sentences, word_idx)
-
-    word2vec = train(len(sorted_words), 200, sentences_in_idx, idx_word)
+    word2vec = train(len(sorted_words), int(conf.get('param','word_embedding_dim')), sentences_in_idx, idx_word)
     print('----------------')
     print(word2vec.shape)
-    print(1)
+    print('----------------')
