@@ -179,6 +179,17 @@ def train(vocabulary_size, embedding_dim, sentences, idx_word, batch_size=20, ep
     return model.in_embedding_layer.weight.to('cpu').data.numpy()
 
 
+def getPreTrainVector():
+    sentences = word2vec.preprocessing.get_preprocessed_sentences()
+    sorted_words = word2vec.preprocessing.make_vocabulary(sentences)
+    word_idx, idx_word = word2vec.create_dict(sorted_words)
+
+    sentences_in_idx = word2vec.replace_words_with_idx(sentences, word_idx)
+    # this
+    word_to_vec = word2vec.train(len(sorted_words), int(conf.get('param', 'word_embedding_dim')), sentences_in_idx,
+                                 idx_word)
+    return word_to_vec, word_idx
+
 if __name__ == '__main__':
     # with open('vocabulary.txt', 'r') as fv:
     #     vocabulary = []
