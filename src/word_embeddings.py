@@ -31,6 +31,10 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
         wordVectors.append(np.random.random(dimension))
     return np.array(wordVectors),wordToIx
 
+'''
+输入
+拿到预训练的单词向量
+'''
 def get_pre_train_vector():
     sentences = word2vec.preprocessing.get_preprocessed_sentences()
     sorted_words = word2vec.preprocessing.make_vocabulary(sentences)
