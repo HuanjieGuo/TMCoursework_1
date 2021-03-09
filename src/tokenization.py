@@ -15,6 +15,20 @@ tokenization：
 from src.pre_processing import sentence_processing, lower_first_letter
 import re
 from src.pre_processing import conf
+'''
+read_stoplist()
+作用：读取stop_words.txt中的停用词，并保存为list
+输入：
+输出：list
+'''
+def read_stoplist():
+    file = conf.get('param', 'stop_words')
+    stop_list = []
+    with open(file, 'r') as f:
+        for line in f.readlines():
+            line = line.strip('\n')
+            stop_list.append(line)
+    return stop_list
 
 '''
 read_stoplist()

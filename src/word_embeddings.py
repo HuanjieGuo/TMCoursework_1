@@ -36,6 +36,3 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     #     embed = embeds(lookup_tensor)
     #     wordVectors.append(embed[:, :].tolist()[0])
     return np.array(wordVectors),wordToIx
-
-
-
