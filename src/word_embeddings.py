@@ -26,13 +26,20 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     for key in wordCountDict.keys():
         wordToIx[key] = i
         i = i+1
-    # embeds = nn.Embedding(len(wordToIx), int(conf.get("param","word_embedding_dim")))  # 2 words in vocab, 100 dimensional embeddingsr
     wordVectors = []
     dimension = int(conf.get("param","word_embedding_dim"))
     for _ in wordToIx:
         wordVectors.append(np.random.random(dimension))
-    # for key in wordToIx:
-    #     lookup_tensor = torch.tensor([wordToIx[key]], dtype=torch.long)
-    #     embed = embeds(lookup_tensor)
-    #     wordVectors.append(embed[:, :].tolist()[0])
     return np.array(wordVectors),wordToIx
+
+if __name__ == '__main__':
+    labels, sentences = sentence_processing(conf.get('param', 'path_train'))
+
+    sentences = lower_first_letter(sentences)
+
+    read_stoplist = read_stoplist()
+
+    tokens, token_of_sentences = tokenization(sentences, read_stoplist)
+    # idx
+    wordVec, wordToIdx = randomly_initialised_vectors(tokens, threshold=0)
+    print(wordVec)
