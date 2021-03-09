@@ -12,6 +12,7 @@
 '''
 
 from src.question_classifier import conf
+import numpy as np
 '''
 sentenceProcessing方法
 输入：txt文件
