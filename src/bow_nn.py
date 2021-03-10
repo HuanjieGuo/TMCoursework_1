@@ -28,6 +28,7 @@ class QuestionClassifier(nn.Module):
     def forward(self, input):
         out = self.output(input)
         return out
+
     def train_model(self,sentence_vectors,labels):
         for i in range(0, len(sentence_vectors)):
             vector = sentence_vectors[i]
@@ -60,14 +61,18 @@ class QuestionClassifier(nn.Module):
         return correct_num / data_size
 
 if __name__ == '__main__':
-    sentence_vectors,labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='randomly')
-    # label to idx
-    output_size = len(set(labels))
+    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='randomly')
+
+    output_size = len(set(train_labels))
     model = QuestionClassifier(output_size)
 
     for epoch in range(int(conf.get("param","epoch"))):
-        model.train_model(sentence_vectors,labels)
-        # 计算准确率
-        acc = model.test_model(test_sentence_vectors,test_labels)
-        print('epoch:', epoch, ' acc: ', acc)
+        model.train_model(train_sentence_vectors,train_labels)
+        # 计算验证集准确率
+        acc = model.test_model(dev_sentence_vectors,dev_labels)
+        print('epoch:', epoch, ' dev_acc: ', acc)
+    # 计算测试集
+    acc = model.test_model(test_sentence_vectors, test_labels)
+    print('test_acc: ', acc)
+
 

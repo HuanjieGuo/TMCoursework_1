@@ -42,36 +42,44 @@ def refactor(sen, labels):
 
 def bag_of_word_sentences(type='randomly'):
     if type not in ['randomly','pre_train']: return
-    labels, sentences = sentence_processing(conf.get('param', 'path_train'))
+    train_labels, train_sentences = sentence_processing(conf.get('param', 'path_train'))
+    dev_labels, dev_sentences = sentence_processing(conf.get('param', 'path_dev'))
     test_labels, test_sentences = sentence_processing(conf.get('param', 'path_test'))
 
-    sentences = lower_first_letter(sentences)
+    train_sentences = lower_first_letter(train_sentences)
     test_sentences = lower_first_letter(test_sentences)
+    dev_sentences = lower_first_letter(dev_sentences)
 
     read_stop = read_stoplist()
 
-    tokens, token_of_sentences = tokenization(sentences, read_stop)
+    train_tokens, train_token_of_sentences = tokenization(train_sentences, read_stop)
+    dev_tokens, dev_token_of_sentences = tokenization(dev_sentences, read_stop)
     test_tokens, test_token_of_sentences = tokenization(test_sentences, read_stop)
-    wordVec, wordToIdx = word_to_vector(tokens=tokens,type=type,path='../to_be_merged/train_1000.txt')
+    wordVec, wordToIdx = word_to_vector(tokens=train_tokens,type=type,path='../to_be_merged/train_1000.txt')
 
-    sentence_vectors = multi_sentences_to_vectors(token_of_sentences,wordToIdx,wordVec)
+    train_sentence_vectors = multi_sentences_to_vectors(train_token_of_sentences,wordToIdx,wordVec)
     test_sentence_vectors = multi_sentences_to_vectors(test_token_of_sentences,wordToIdx,wordVec)
+    dev_sentence_vectors = multi_sentences_to_vectors(dev_token_of_sentences,wordToIdx,wordVec)
 
-    labels,test_labels = get_label_number_to_idx(labels,test_labels)
-    return sentence_vectors,labels,test_sentence_vectors,test_labels
+    train_labels,dev_labels,test_labels = get_label_number_to_idx(train_labels,dev_labels,test_labels)
 
-def get_label_number_to_idx(labels,test_labels):
+    return train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels
+
+def get_label_number_to_idx(train_labels, dev_labels, test_labels):
     label_to_ix = {}
-    for label in labels + test_labels:
+    for label in train_labels + test_labels+dev_labels:
         if label not in label_to_ix:
             label_to_ix[label] = len(label_to_ix)
-    labels_idxs = []
+    train_labels_idxs = []
+    dev_labels_idxs = []
     test_labels_idxs = []
-    for label in labels:
-        labels_idxs.append(label_to_ix[label])
+    for label in train_labels:
+        train_labels_idxs.append(label_to_ix[label])
+    for label in dev_labels:
+        dev_labels_idxs.append(label_to_ix[label])
     for label in test_labels:
         test_labels_idxs.append(label_to_ix[label])
-    return labels_idxs,test_labels_idxs
+    return train_labels_idxs,dev_labels_idxs,test_labels_idxs
 
 if __name__ == '__main__':
     bag_of_word_sentences()

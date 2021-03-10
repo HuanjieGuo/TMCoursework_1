@@ -46,7 +46,6 @@ def remove_stop_words(sentences):
                 i += 1
     return sentences
 
-
 def make_vocabulary(sentences):
     all_words = []
     for sentence in sentences:
@@ -63,11 +62,6 @@ def get_preprocessed_sentences(file_path):
         _, sentences = labels_extraction(data)
         sentences = remove_punctuations(sentences)
         return to_lower_case(sentences)
-
-
-# def get_sorted_words():
-#     return make_vocabulary(get_preprocessed_sentences())
-
 
 if __name__ == '__main__':
     with open('train_1000.txt', 'r') as f:

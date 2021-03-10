@@ -5,7 +5,6 @@ you can run it on console by:
 python3 question_classifier.py  --test --config "../data/bow.config"
 '''
 
-import numpy as np
 import torch
 import random
 from configparser import ConfigParser
@@ -30,6 +29,7 @@ conf.read(args.config)
 if(args.train):
     # do the train function
     print('train')
+
 
 if(args.test):
     # do the test function
