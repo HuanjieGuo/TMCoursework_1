@@ -1,11 +1,9 @@
 import numpy as np
 import torch
 from to_be_merged import word2vec
-from src.pre_processing import sentence_processing
-from src.pre_processing import lower_first_letter
-from src.tokenization import tokenization
+from src.pre_processing import sentence_processing,lower_first_letter
+from src.tokenization import tokenization,read_stoplist
 from src.question_classifier import conf
-from src.tokenization import read_stoplist
 torch.manual_seed(1)
 '''
 input:
@@ -29,14 +27,20 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     dimension = int(conf.get("param","word_embedding_dim"))
     for _ in wordToIx:
         wordVectors.append(np.random.random(dimension))
-    return np.array(wordVectors),wordToIx
+    return np.asarray(wordVectors),wordToIx
 
+
+def word_to_vector(tokens,type='randomly',path=None):
+    if type == 'randomly':
+        return randomly_initialised_vectors(tokens, threshold=5)
+    if type == 'pre_train':
+        return get_pre_train_vector(path)
 '''
 输入
 拿到预训练的单词向量
 '''
-def get_pre_train_vector():
-    sentences = word2vec.preprocessing.get_preprocessed_sentences()
+def get_pre_train_vector(path):
+    sentences = word2vec.preprocessing.get_preprocessed_sentences(path)
     sorted_words = word2vec.preprocessing.make_vocabulary(sentences)
     word_idx, idx_word = word2vec.create_dict(sorted_words)
 
