@@ -55,8 +55,7 @@ def bag_of_word_sentences(type='randomly',freeze=True):
     train_tokens, train_token_of_sentences = tokenization(train_sentences, read_stop)
     dev_tokens, dev_token_of_sentences = tokenization(dev_sentences, read_stop)
     test_tokens, test_token_of_sentences = tokenization(test_sentences, read_stop)
-    wordVec, wordToIdx = get_word_embedding(tokens=train_tokens, type=type, freeze=freeze,path='../to_be_merged/train_1000.txt')
-    print(wordVec)
+    wordVec, wordToIdx = get_word_embedding(tokens=train_tokens, type=type, freeze=freeze, path='../to_be_merged/train_1000.txt')
 
     train_sentence_vectors = multi_sentences_to_vectors(train_token_of_sentences,wordToIdx,wordVec)
     test_sentence_vectors = multi_sentences_to_vectors(test_token_of_sentences,wordToIdx,wordVec)

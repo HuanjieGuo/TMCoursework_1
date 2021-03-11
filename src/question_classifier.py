@@ -6,12 +6,11 @@ python3 question_classifier.py  --test --config "../data/bow.config"
 '''
 
 import torch
-import random
 from configparser import ConfigParser
 import argparse
+from src import bow_nn
 
 torch.manual_seed(1)
-random.seed(1)
 
 parser = argparse.ArgumentParser(description='manual to this script')
 parser.add_argument('--config', help='The path of the configuration file',type=str, default='../data/bow.config')
@@ -28,12 +27,14 @@ conf.read(args.config)
 
 if(args.train):
     # do the train function
-    print('train')
+    if(conf.get("param","model")=="bow"):
+        bow_nn.train()
 
 
 if(args.test):
     # do the test function
-    print('test')
+    if(conf.get("param","model")=="bow"):
+        bow_nn.test()
 
 if __name__ == '__main__':
     # print(conf.get('param', 'model'))

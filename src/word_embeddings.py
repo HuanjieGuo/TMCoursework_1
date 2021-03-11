@@ -5,7 +5,7 @@ from to_be_merged import word2vec
 from src.pre_processing import sentence_processing,lower_first_letter
 from src.tokenization import tokenization,read_stoplist
 from src.question_classifier import conf
-from torch.autograd import Variable
+
 torch.manual_seed(1)
 '''
 input:
@@ -58,7 +58,6 @@ def get_pre_train_vector(path):
     # this
     word_to_vec = word2vec.train(len(sorted_words), int(conf.get('param', 'word_embedding_dim')), sentences_in_idx,
                                  idx_word)
-    print(word_to_vec)
 
     return word_to_vec, word_idx
 

@@ -8,7 +8,7 @@ into dev.txt and train.txt
 '''
 def get_train_dev():
     # open the data file
-    path = os.path.join(os.getcwd(),"..","data", "train_5500.txt")
+    path = os.path.join(os.getcwd(), "..", "data", "train_5500.txt")
     f = open(path)
     lines = f.readlines()
     f.close()

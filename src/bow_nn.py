@@ -1,11 +1,11 @@
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.autograd import Variable
 import numpy as np
-from src.question_classifier import conf
 from src import sentence_vector
-from torch.functional import F
+from src.question_classifier import conf
 torch.manual_seed(1)
 
 
@@ -46,7 +46,6 @@ class QuestionClassifier(nn.Module):
             loss = self.loss_function(output, target)
             loss.backward()
             self.optimizer.step()
-        torch.save(self,'sentence_classifier_bow.pkl')
 
     def test_model(self,test_sentence_vectors,test_labels):
         # calculate correct rate
@@ -78,7 +77,6 @@ def readFile(file):
             list = np.fromstring(list,dtype=float,sep=", ")
             vec = torch.from_numpy(list)
             vec = vec.view(1, -1)
-            # print(vec)
             sentence_vectors.append(vec)
             labels.append(int(label))
         except:
@@ -87,9 +85,30 @@ def readFile(file):
     f.close()
     return sentence_vectors,labels
 
+def train():
+    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type=conf.get("param", "word_embedding_type"), freeze=True)
+
+    output_size = len(set(train_labels))
+    model = QuestionClassifier(output_size)
+
+    for epoch in range(int(conf.get("param","epoch"))):
+        model.train_model(train_sentence_vectors,train_labels)
+        # # 计算验证集准确率
+        acc = model.test_model(dev_sentence_vectors,dev_labels)
+        print('epoch:', epoch, ' dev_acc: ', acc)
+    torch.save(model, conf.get("param", "path_model"))
+
+def test():
+    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type=conf.get("param", "word_embedding_type"), freeze=True)
+    model = torch.load(conf.get("param","path_model"))
+    # 计算测试集
+    acc = model.test_model(test_sentence_vectors, test_labels)
+    print('test_acc: ', acc)
+
+
 if __name__ == '__main__':
     # 修改randomly 或者pre_train 选择不同word embeding方法
-    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='pre_train')
+    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='randomly', freeze=True)
 
     output_size = len(set(train_labels))
     model = QuestionClassifier(output_size)
