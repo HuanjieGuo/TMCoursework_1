@@ -26,24 +26,37 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     for key in wordCountDict.keys():
         wordToIx[key] = i
         i = i+1
-    dimension = int(conf.get("param","word_embedding_dim"))
-    embeds = nn.Embedding(len(wordToIx),dimension)
-    wordVectors = []
-    for key in wordToIx:
-        idx = torch.LongTensor([wordToIx[key]])
-        idx = Variable(idx)
-        one_embed = embeds(idx)
+    # dimension = int(conf.get("param","word_embedding_dim"))
+    # embeds = nn.Embedding(len(wordToIx),dimension)
+    word_vectors = []
+    for _ in wordToIx:
+        word_vectors.append(np.random.random(int(conf.get("param","word_embedding_dim"))))
+        #emdeds = nn.Embedding.from_pretrained(embeds=embeds,freeze=True)
+    word_vectors = np.array(word_vectors)
+    # print(embeds)
+    # wordVectors = []
+    # for key in wordToIx:
+    #     idx = torch.LongTensor([wordToIx[key]])
+    #     idx = Variable(idx)
+    #     one_embed = embeds(idx)
+    #
+    #     ndarray = one_embed.detach().numpy()
+    #     wordVectors.append(ndarray[0])
+    return word_vectors,wordToIx
 
-        ndarray = one_embed.detach().numpy()
-        wordVectors.append(ndarray[0])
-    return np.asarray(wordVectors),wordToIx
 
-
-def word_to_vector(tokens,type='randomly',path=None):
+def get_word_embedding(tokens, type='randomly', path=None):
     if type == 'randomly':
-        return randomly_initialised_vectors(tokens, threshold=5)
+        wordVec,wordToIdx =  randomly_initialised_vectors(tokens, threshold=5)
     if type == 'pre_train':
-        return get_pre_train_vector(path)
+        wordVec,wordToIdx = get_pre_train_vector(path)
+
+    embeds = nn.Embedding.from_pretrained(torch.from_numpy(wordVec),freeze=True)
+
+    return embeds
+
+
+
 '''
 输入
 拿到预训练的单词向量
@@ -58,6 +71,8 @@ def get_pre_train_vector(path):
     # this
     word_to_vec = word2vec.train(len(sorted_words), int(conf.get('param', 'word_embedding_dim')), sentences_in_idx,
                                  idx_word)
+    print(word_to_vec)
+
     return word_to_vec, word_idx
 
 if __name__ == '__main__':

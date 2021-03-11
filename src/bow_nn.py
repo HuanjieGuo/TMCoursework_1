@@ -27,6 +27,7 @@ class QuestionClassifier(nn.Module):
         self.loss_function = nn.CrossEntropyLoss()
         # optimizer
         self.optimizer = optim.SGD(self.parameters(), lr=float(conf.get("param", "lr_param")))
+
     def forward(self, input):
         out = self.f1(input)
         out = F.sigmoid(out)
@@ -46,6 +47,7 @@ class QuestionClassifier(nn.Module):
             loss = self.loss_function(output, target)
             loss.backward()
             self.optimizer.step()
+        torch.save(self,'sentence_classifier_bow.pkl')
 
     def test_model(self,test_sentence_vectors,test_labels):
         # calculate correct rate
@@ -88,11 +90,11 @@ def readFile(file):
 
 if __name__ == '__main__':
     # 修改randomly 或者pre_train 选择不同word embeding方法
-    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='pre_train')
+    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='randomly')
 
-    #
     output_size = len(set(train_labels))
     model = QuestionClassifier(output_size)
+    # model.embedding.from_pretrained(embeddings=None,freeze=True)
 
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)

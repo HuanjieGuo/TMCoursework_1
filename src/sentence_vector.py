@@ -4,7 +4,7 @@ from src.pre_processing import sentence_processing
 from src.tokenization import lower_first_letter,read_stoplist
 import torch
 from src.tokenization import tokenization
-from src.word_embeddings import word_to_vector
+from src.word_embeddings import get_word_embedding
 
 '''
 输入：句子矩阵 n*token
@@ -55,7 +55,8 @@ def bag_of_word_sentences(type='randomly'):
     train_tokens, train_token_of_sentences = tokenization(train_sentences, read_stop)
     dev_tokens, dev_token_of_sentences = tokenization(dev_sentences, read_stop)
     test_tokens, test_token_of_sentences = tokenization(test_sentences, read_stop)
-    wordVec, wordToIdx = word_to_vector(tokens=train_tokens,type=type,path='../to_be_merged/train_1000.txt')
+    wordVec, wordToIdx = get_word_embedding(tokens=train_tokens, type=type, path='../to_be_merged/train_1000.txt')
+    print(wordVec)
 
     train_sentence_vectors = multi_sentences_to_vectors(train_token_of_sentences,wordToIdx,wordVec)
     test_sentence_vectors = multi_sentences_to_vectors(test_token_of_sentences,wordToIdx,wordVec)
