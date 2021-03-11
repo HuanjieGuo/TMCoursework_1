@@ -1,6 +1,6 @@
 import numpy as np
 from src.global_value import conf
-from src.pre_processing import sentence_processing
+from src.preprocessing import sentence_processing
 from src.tokenization import lower_first_letter,read_stoplist
 import torch
 from src.tokenization import tokenization

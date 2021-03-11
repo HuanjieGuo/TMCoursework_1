@@ -2,7 +2,7 @@ import numpy as np
 import torch.nn as nn
 import torch
 from src import word2vec
-from src.pre_processing import sentence_processing,lower_first_letter
+from src.preprocessing import sentence_processing,lower_first_letter
 from src.tokenization import tokenization,read_stoplist
 from src.global_value import conf
 

@@ -12,9 +12,9 @@ tokenization：
 3. Tokenization: tokens,token_of_sentences = tokenization(sentences, stop_list)
 '''
 
-from src.pre_processing import sentence_processing, lower_first_letter
+from src.preprocessing import sentence_processing, lower_first_letter
 import re
-from src.pre_processing import conf
+from src.preprocessing import conf
 '''
 read_stoplist()
 作用：读取stop_words.txt中的停用词，并保存为list
