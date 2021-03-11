@@ -8,10 +8,8 @@ def process_train_set(path):
     with open(path, 'r') as f:
         data = f.readlines()
         labels, sentences = labels_extraction(data)
-        # print(sentences[1])
-        # print(len(sentences))
         sentences = remove_punctuations(sentences)
-        sentences = to_lower_case(sentences)
+        sentences = to_lower_case(remove_stop_words(sentences))
         sorted_words = make_vocabulary(sentences)
         word_idx, _ = word2vec.create_dict(sorted_words)
         sentences_in_idx = word2vec.replace_words_with_idx(sentences, word_idx)
@@ -24,6 +22,8 @@ def process_new_dataset(word_idx, label_idx, path):
     with open(path, 'r') as f:
         data = f.readlines()
         labels, sentences = labels_extraction(data)
+        sentences = remove_punctuations(sentences)
+        sentences = to_lower_case(remove_stop_words(sentences))
         labels_in_idx = []
         for label in labels:
             if label in label_idx:
