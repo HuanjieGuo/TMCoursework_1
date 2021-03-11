@@ -180,6 +180,7 @@ def train(vocabulary_size, embedding_dim, sentences, idx_word, batch_size=20, ep
 
 
 def getPreTrainVector():
+    print('Please wait, pre-train...')
     sentences = word2vec.preprocessing.get_preprocessed_sentences('../to_be_merged/train_1000.txt')
     sorted_words = word2vec.preprocessing.make_vocabulary(sentences)
     word_idx, idx_word = word2vec.create_dict(sorted_words)

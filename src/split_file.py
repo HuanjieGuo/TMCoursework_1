@@ -45,4 +45,4 @@ def random_split(full_list, shuffle=False, ratio=0):
     return sublist_1, sublist_2
 
 if __name__ == '__main__':
-    pass
+    get_train_dev()

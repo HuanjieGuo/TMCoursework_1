@@ -4,6 +4,7 @@ import torch.optim as optim
 from torch.autograd import Variable
 from src.question_classifier import conf
 from src import sentence_vector
+from torch.functional import F
 torch.manual_seed(1)
 
 
@@ -17,8 +18,8 @@ class QuestionClassifier(nn.Module):
     def __init__(self, num_labels):
         super(QuestionClassifier, self).__init__()
         # n_hidden = 256
-        self.output = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
-        # self.predict = nn.Linear(n_hidden, num_labels)
+        self.f1 = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
+        # self.f2 = nn.Linear(n_hidden, num_labels)
 
         self.double()
         # loss
@@ -26,7 +27,9 @@ class QuestionClassifier(nn.Module):
         # optimizer
         self.optimizer = optim.SGD(self.parameters(), lr=float(conf.get("param", "lr_param")))
     def forward(self, input):
-        out = self.output(input)
+        out = self.f1(input)
+        # out = F.sigmoid(out)
+        # out = self.f2(out)
         return out
 
     def train_model(self,sentence_vectors,labels):
@@ -44,7 +47,7 @@ class QuestionClassifier(nn.Module):
             self.optimizer.step()
 
     def test_model(self,test_sentence_vectors,test_labels):
-        # 计算准确率
+        # calculate correct rate
         data_size = len(test_sentence_vectors)
         correct_num = 0
 
@@ -58,7 +61,7 @@ class QuestionClassifier(nn.Module):
             if label == int(index):
                 correct_num += 1
 
-        return correct_num / data_size
+        return round(correct_num / data_size,4)
 
 if __name__ == '__main__':
     train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='randomly')
