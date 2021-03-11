@@ -11,7 +11,7 @@
 2. sentences = lower_first_letter(sentences)
 '''
 
-from src.question_classifier import conf
+from src.global_value import conf
 
 '''
 sentenceProcessing方法

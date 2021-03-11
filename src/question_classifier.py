@@ -5,8 +5,18 @@ you can run it on console by:
 python3 question_classifier.py  --test --config "../data/bow.config"
 '''
 
+import sys
+import os
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+
+rootPath = os.path.split(curPath)[0]
+
+sys.path.append(rootPath)
+
+
 import torch
-from configparser import ConfigParser
+from src import global_value as gv
 import argparse
 from src import bow_nn
 
@@ -22,18 +32,17 @@ parser.add_argument("--test", help="To test the model",
 args = parser.parse_args()
 
 # use conf to read the configuration
-conf = ConfigParser()
-conf.read(args.config)
+gv.conf.read(args.config)
 
 if(args.train):
     # do the train function
-    if(conf.get("param","model")=="bow"):
+    if(gv.conf.get("param","model")=="bow"):
         bow_nn.train()
 
 
 if(args.test):
     # do the test function
-    if(conf.get("param","model")=="bow"):
+    if(gv.conf.get("param","model")=="bow"):
         bow_nn.test()
 
 if __name__ == '__main__':

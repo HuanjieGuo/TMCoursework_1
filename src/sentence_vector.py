@@ -1,5 +1,5 @@
 import numpy as np
-from src.question_classifier import conf
+from src.global_value import conf
 from src.pre_processing import sentence_processing
 from src.tokenization import lower_first_letter,read_stoplist
 import torch
@@ -16,12 +16,13 @@ from src.word_embeddings import get_word_embedding
 '''
 def make_bow_vector(tokens,wordToIdx,wordVec):
     vec = np.zeros(int(conf.get("param","word_embedding_dim")))
+    count = 0
     for word in tokens:
         if word in wordToIdx.keys():
             vector = wordVec[wordToIdx[word]]
             vec += vector
-        else : vec += wordVec[0]
-    vec = vec / len(tokens)
+            count+=1
+    vec = vec / count
     vec = torch.from_numpy(vec)
     return vec.view(1, -1)
 

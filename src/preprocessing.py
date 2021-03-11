@@ -1,7 +1,7 @@
 # By Maxine
 
 from collections import Counter
-import word2vec
+from src import word2vec
 
 
 def process_train_set(path):
@@ -80,7 +80,7 @@ def to_lower_case(sentences):
 
 def remove_stop_words(sentences):
     stop_words = []
-    with open('./src/stop_words.txt', 'r') as f:
+    with open('../data/stop_words.txt', 'r') as f:
         while True:
             line = f.readline()
             if not line:
@@ -107,7 +107,7 @@ def make_vocabulary(sentences):
 
 
 def get_preprocessed_sentences():
-    with open('./data/train.txt', 'r') as f:
+    with open('../data/train.txt', 'r') as f:
         data = f.readlines()
         _, sentences = labels_extraction(data)
         sentences = remove_punctuations(sentences)

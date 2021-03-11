@@ -1,10 +1,10 @@
 import numpy as np
 import torch.nn as nn
 import torch
-from to_be_merged import word2vec
+from src import word2vec
 from src.pre_processing import sentence_processing,lower_first_letter
 from src.tokenization import tokenization,read_stoplist
-from src.question_classifier import conf
+from src.global_value import conf
 
 torch.manual_seed(1)
 '''
@@ -37,7 +37,7 @@ def get_word_embedding(tokens, type='randomly', freeze=True,path=None):
     if type == 'randomly':
         wordVec,wordToIdx =  randomly_initialised_vectors(tokens, threshold=5)
     if type == 'pre_train':
-        wordVec,wordToIdx = get_pre_train_vector(path)
+        wordVec,wordToIdx = get_pre_train_vector()
 
     embeds = nn.Embedding.from_pretrained(torch.from_numpy(wordVec),freeze=freeze)
     wordvec = embeds.weight.data.numpy()
@@ -48,9 +48,9 @@ def get_word_embedding(tokens, type='randomly', freeze=True,path=None):
 输入
 拿到预训练的单词向量
 '''
-def get_pre_train_vector(path):
+def get_pre_train_vector():
     print('Please wait, pre-train...')
-    sentences = word2vec.preprocessing.get_preprocessed_sentences(path)
+    sentences = word2vec.preprocessing.get_preprocessed_sentences()
     sorted_words = word2vec.preprocessing.make_vocabulary(sentences)
     word_idx, idx_word = word2vec.create_dict(sorted_words)
 

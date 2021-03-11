@@ -1,6 +1,6 @@
 # By Maxine
 
-import preprocessing
+from src import preprocessing
 from collections import Counter
 import random
 
@@ -175,17 +175,17 @@ def train(vocabulary_size, embedding_dim, sentences, idx_word, batch_size=200, e
             optimizer.step()
 
             if steps % 100 == 0:
-                print("Epoch: {}/{}".format(e+1, epochs))
+                #print("Epoch: {}/{}".format(e+1, epochs))
                 # avg batch loss at this point in training
-                print("Loss: ", loss.item())
+               # print("Loss: ", loss.item())
                 valid_examples, valid_similarities = cosine_similarity(model.in_embedding_layer)
                 _, closest_idxes = valid_similarities.topk(5)
 
                 valid_examples, closest_idxes = valid_examples.to('cpu'), closest_idxes.to('cpu')
                 for i, valid_idx in enumerate(valid_examples):
                     closest_words = [idx_word[idx.item()] for idx in closest_idxes[i]][1:]
-                    print(idx_word[valid_idx.item()] + " | " + ', '.join(closest_words))
-                print("...\n")
+                    #print(idx_word[valid_idx.item()] + " | " + ', '.join(closest_words))
+                #print("...\n")
     return model.in_embedding_layer.weight.to('cpu').data.numpy()
 
 
@@ -201,6 +201,6 @@ if __name__ == '__main__':
     sorted_words = preprocessing.make_vocabulary(sentences)
     word_idx, idx_word = create_dict(sorted_words)
     sentences_in_idx = replace_words_with_idx(sentences, word_idx)
-    print(len(sorted_words))
+    #print(len(sorted_words))
 
     word2vec = train(len(sorted_words), 200, sentences_in_idx, idx_word)

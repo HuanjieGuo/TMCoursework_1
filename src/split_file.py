@@ -1,4 +1,4 @@
-from src.question_classifier import conf
+from src.global_value import conf
 import random
 import os
 '''

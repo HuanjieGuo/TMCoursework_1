@@ -5,7 +5,7 @@ import torch.optim as optim
 from torch.autograd import Variable
 import numpy as np
 from src import sentence_vector
-from src.question_classifier import conf
+from src.global_value import conf
 torch.manual_seed(1)
 
 
@@ -26,6 +26,9 @@ class QuestionClassifier(nn.Module):
         self.loss_function = nn.CrossEntropyLoss()
         # optimizer
         self.optimizer = optim.SGD(self.parameters(), lr=float(conf.get("param", "lr_param")))
+
+        self.test_vecs = []
+        self.test_label = []
 
     def forward(self, input):
         out = self.f1(input)
@@ -90,7 +93,9 @@ def train():
 
     output_size = len(set(train_labels))
     model = QuestionClassifier(output_size)
-
+    # save test data
+    model.test_vecs = test_sentence_vectors
+    model.test_label = test_labels
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)
         # # 计算验证集准确率
@@ -99,20 +104,20 @@ def train():
     torch.save(model, conf.get("param", "path_model"))
 
 def test():
-    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type=conf.get("param", "word_embedding_type"), freeze=True)
-    model = torch.load(conf.get("param","path_model"))
+    model = torch.load(conf.get('param','path_model'))
+    model.to('cpu')
+
     # 计算测试集
-    acc = model.test_model(test_sentence_vectors, test_labels)
+    acc = model.test_model(model.test_vecs, model.test_label)
     print('test_acc: ', acc)
 
 
 if __name__ == '__main__':
     # 修改randomly 或者pre_train 选择不同word embeding方法
-    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='randomly', freeze=True)
+    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='pre_train', freeze=True)
 
     output_size = len(set(train_labels))
     model = QuestionClassifier(output_size)
-    # model.embedding.from_pretrained(embeddings=None,freeze=True)
 
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)
