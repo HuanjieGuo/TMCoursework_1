@@ -40,7 +40,7 @@ def refactor(sen, labels):
     return data
 
 
-def bag_of_word_sentences(type='randomly'):
+def bag_of_word_sentences(type='randomly',freeze=True):
     if type not in ['randomly','pre_train']: return
     train_labels, train_sentences = sentence_processing(conf.get('param', 'path_train'))
     dev_labels, dev_sentences = sentence_processing(conf.get('param', 'path_dev'))
@@ -55,7 +55,7 @@ def bag_of_word_sentences(type='randomly'):
     train_tokens, train_token_of_sentences = tokenization(train_sentences, read_stop)
     dev_tokens, dev_token_of_sentences = tokenization(dev_sentences, read_stop)
     test_tokens, test_token_of_sentences = tokenization(test_sentences, read_stop)
-    wordVec, wordToIdx = get_word_embedding(tokens=train_tokens, type=type, path='../to_be_merged/train_1000.txt')
+    wordVec, wordToIdx = get_word_embedding(tokens=train_tokens, type=type, freeze=freeze,path='../to_be_merged/train_1000.txt')
     print(wordVec)
 
     train_sentence_vectors = multi_sentences_to_vectors(train_token_of_sentences,wordToIdx,wordVec)

@@ -18,9 +18,8 @@ torch.manual_seed(1)
 class QuestionClassifier(nn.Module):
     def __init__(self, num_labels):
         super(QuestionClassifier, self).__init__()
-        n_hidden = 256
-        self.f1 = nn.Linear(int(conf.get("param","word_embedding_dim")), n_hidden)
-        self.f2 = nn.Linear(n_hidden, num_labels)
+        # n_hidden = 256
+        self.f1 = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
 
         self.double()
         # loss
@@ -30,8 +29,8 @@ class QuestionClassifier(nn.Module):
 
     def forward(self, input):
         out = self.f1(input)
-        out = F.sigmoid(out)
-        out = self.f2(out)
+        # out = F.sigmoid(out)
+        # out = self.f2(out)
         return out
 
     def train_model(self,sentence_vectors,labels):
@@ -90,7 +89,7 @@ def readFile(file):
 
 if __name__ == '__main__':
     # 修改randomly 或者pre_train 选择不同word embeding方法
-    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='randomly')
+    train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='pre_train')
 
     output_size = len(set(train_labels))
     model = QuestionClassifier(output_size)

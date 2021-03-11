@@ -26,35 +26,22 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     for key in wordCountDict.keys():
         wordToIx[key] = i
         i = i+1
-    # dimension = int(conf.get("param","word_embedding_dim"))
-    # embeds = nn.Embedding(len(wordToIx),dimension)
     word_vectors = []
     for _ in wordToIx:
         word_vectors.append(np.random.random(int(conf.get("param","word_embedding_dim"))))
-        #emdeds = nn.Embedding.from_pretrained(embeds=embeds,freeze=True)
     word_vectors = np.array(word_vectors)
-    # print(embeds)
-    # wordVectors = []
-    # for key in wordToIx:
-    #     idx = torch.LongTensor([wordToIx[key]])
-    #     idx = Variable(idx)
-    #     one_embed = embeds(idx)
-    #
-    #     ndarray = one_embed.detach().numpy()
-    #     wordVectors.append(ndarray[0])
     return word_vectors,wordToIx
 
 
-def get_word_embedding(tokens, type='randomly', path=None):
+def get_word_embedding(tokens, type='randomly', freeze=True,path=None):
     if type == 'randomly':
         wordVec,wordToIdx =  randomly_initialised_vectors(tokens, threshold=5)
     if type == 'pre_train':
         wordVec,wordToIdx = get_pre_train_vector(path)
 
-    embeds = nn.Embedding.from_pretrained(torch.from_numpy(wordVec),freeze=True)
-
-    return embeds
-
+    embeds = nn.Embedding.from_pretrained(torch.from_numpy(wordVec),freeze=freeze)
+    wordvec = embeds.weight.data.numpy()
+    return wordvec,wordToIdx
 
 
 '''
