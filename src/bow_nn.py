@@ -1,4 +1,3 @@
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -6,6 +5,7 @@ from torch.autograd import Variable
 import numpy as np
 from src import sentence_vector
 from src.global_value import conf
+from torch.nn import functional as F
 torch.manual_seed(1)
 
 
@@ -18,8 +18,8 @@ torch.manual_seed(1)
 class QuestionClassifier(nn.Module):
     def __init__(self, num_labels):
         super(QuestionClassifier, self).__init__()
-        # n_hidden = 256
         self.f1 = nn.Linear(int(conf.get("param","word_embedding_dim")), num_labels)
+        # self.f2 = nn.Linear(n_hidden, num_labels)
 
         self.double()
         # loss

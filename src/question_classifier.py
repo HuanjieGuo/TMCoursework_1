@@ -4,7 +4,6 @@ it captures the option and the parameters input by the user.
 you can run it on console by:
 python3 question_classifier.py  --test --config "../data/bow.config"
 '''
-
 import sys
 import os
 
