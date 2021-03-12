@@ -45,7 +45,6 @@ class QuestionClassifier(nn.Module):
             target = Variable(torch.LongTensor([label]))
 
             output = self(bow_vec)
-
             loss = self.loss_function(output, target)
             loss.backward()
             self.optimizer.step()

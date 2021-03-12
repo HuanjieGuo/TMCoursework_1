@@ -45,5 +45,5 @@ if(args.test):
     if(gv.conf.get("param","model")=="bow"):
         bow_nn.test()
     elif (gv.conf.get("param","model")=="bilstm"):
-        bilistm_nn.train()
+        bilistm_nn.test()
 

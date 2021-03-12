@@ -77,7 +77,7 @@ def vector_file():
 
 
     device = 'cpu'
-    model = torch.load('word2vec_Bilstm_3.pkl')
+    model = torch.load('../data/word2vec_Bilstm_3.pkl')
     model.to(device)
 
     seq_length = 10
@@ -93,7 +93,7 @@ def vector_file():
     #optimizer = optim.SGD(rnn_.parameters(), lr=1e-3)
     criteon = nn.CrossEntropyLoss().to(device)
 
-    with open('./train_.txt','w',encoding='utf-8') as f:
+    with open('../data/train_.txt','w',encoding='utf-8') as f:
         for inputs, labels in train_loader:
             pred,cell = model(inputs.long())
             rep = cell.view(200,1).squeeze(1)
@@ -102,7 +102,7 @@ def vector_file():
             f.write(str(int(labels)))
             f.write('\n')
 
-    with open('./dev_.txt','w',encoding='utf-8') as f:
+    with open('../data/dev_.txt','w',encoding='utf-8') as f:
         for inputs, labels in dev_loader:
             pred,cell = model(inputs.long())
             rep = cell.view(200,1).squeeze(1)
@@ -111,7 +111,7 @@ def vector_file():
             f.write(str(int(labels)))
             f.write('\n')
 
-    with open('./test_.txt','w',encoding='utf-8') as f:
+    with open('../data/test_.txt','w',encoding='utf-8') as f:
         for inputs, labels in test_loader:
             pred,cell = model(inputs.long())
             rep = cell.view(200,1).squeeze(1)

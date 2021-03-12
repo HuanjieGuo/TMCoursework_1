@@ -82,10 +82,11 @@ def readFile(file):
 
 
 def train():
+    print('Please wait, loading data...')
     bilstm_test.train_Bilstm()
-    train_sentence_vectors, train_labels = readFile("./train_.txt")
-    dev_sentence_vectors, dev_labels = readFile("./dev_.txt")
-    test_sentence_vectors, test_labels = readFile("./test_.txt")
+    train_sentence_vectors, train_labels = readFile("../data/train_.txt")
+    dev_sentence_vectors, dev_labels = readFile("../data/dev_.txt")
+    test_sentence_vectors, test_labels = readFile("../data/test_.txt")
 
     output_size = len(set(train_labels))
     model = QuestionClassifier(output_size)
@@ -96,7 +97,7 @@ def train():
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)
         acc = model.test_model(dev_sentence_vectors, dev_labels)
-        print('epoch:', epoch, 'test_acc: ', acc)
+        print('epoch:', epoch, 'dev_acc: ', acc)
     torch.save(model, conf.get("param", "path_model"))
 
 

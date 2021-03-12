@@ -157,7 +157,6 @@ def eval(rnn, test_loader, criteon, patience=50):
                     break
 
         avg_acc = np.array(avg_acc).mean()
-        print('test acc:', avg_acc)
 
 
 def refactor(sen, labels):
@@ -203,12 +202,12 @@ def train_Bilstm():
     optimizer = optim.Adam(rnn_.parameters(), lr=float(conf.get("param","lr_param")))
     criteon = nn.CrossEntropyLoss().to(device)
     rnn_.to(device)
-    print(rnn_.to(device))
+    # print(rnn_.to(device))
 
     for epoch in range(int(conf.get("param","epoch"))):
         cells = train_another_new(rnn_, train_loader, optimizer, criteon)
         eval(rnn_, test_loader, criteon, patience=int(conf.get('param', 'early_stopping')))
-    torch.save(rnn_, 'word2vec_Bilstm_3.pkl')
+    torch.save(rnn_, '../data/word2vec_Bilstm_3.pkl')
     #print('```````````````')
     classifier.vector_file()
     
