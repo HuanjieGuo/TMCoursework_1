@@ -5,7 +5,7 @@ from src import word2vec
 from src.preprocessing import sentence_processing,lower_first_letter
 from src.tokenization import tokenization,read_stoplist
 from src.global_value import conf
-
+from src import question_classifier
 torch.manual_seed(1)
 '''
 input:
@@ -64,7 +64,7 @@ def get_pre_train_vector():
 if __name__ == '__main__':
     labels, sentences = sentence_processing(conf.get('param', 'path_train'))
 
-    sentences = lower_first_letter(sentences)
+    sentences = lower_first_letter(sentences,conf.get('param','lowercase'))
 
     read_stoplist = read_stoplist()
 
