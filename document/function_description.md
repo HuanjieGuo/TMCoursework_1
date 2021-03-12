@@ -147,3 +147,134 @@ wordToIx: a map that the key is the word, and value is its corresponding index.
 def get_pre_train_vector()
 ```
 
+### Bilstm_test.py
+
+```python
+'''
+Generate the BiLSTM model and complete the training and testing, and save the model.
+'''
+def acc_(preds, y)
+
+'''
+Calculate the accuracy of a batch of sentences.
+
+input:  
+preds: Output from the BiLSTM model.
+y: Real labels.
+
+return:
+acc: Average accuracy
+'''
+def tokenization(sentences, stop_list)
+
+'''
+def acc_(preds, y)
+
+'''
+Calculate the accuracy of a batch of sentences.
+
+input:  
+preds: Output from the BiLSTM model.
+y: Real labels.
+
+return:
+acc: Average accuracy
+'''
+'''
+def train_another_new(rnn, train_loader, optimizer, criteon)
+
+'''
+Training BiLSTM model.
+
+input:  
+rnn: BiLSTM model.
+train_loader: Dataloader for training data set.
+optimizer: Optimizer, Adam in the project.
+criteon: Loss function, in this project is the cross entropy function.
+
+return:
+cells: Sentence representation of the current batch
+'''
+'''
+def eval(rnn, test_loader, criteon, patience=50)
+
+'''
+Evaluate the accuracy of the model.
+
+input:  
+rnn: BiLSTM model.
+test_loader: Dataloader for test data set.
+criteon: Loss function, in this project is the cross entropy function.
+
+return:
+Print the average accuracy for the whole test data set.
+'''
+```
+
+### bilistm_nn.py and bow_nn.py
+
+```python
+'''
+Bilstm Classifier, BOW Classifier and four functions: for reading file, train the model, test the model and output the predict sentence to specified file
+'''
+
+class QuestionClassifier(nn.Module):
+'''
+Bilstm Classifier 
+input layer: word_embedding_dim
+output layer: count(unique label)
+'''
+
+class QuestionClassifier(nn.Module):
+'''
+BOW Classifier
+input layer: word_embedding_dim
+output layer: count(unique label)
+'''
+  
+def readFile(file):
+'''
+function for reading files.
+
+input:  
+The path of the file to be read
+
+return:
+sentence vectors and labels
+'''
+
+def train():
+'''
+train the model for Bilstm classifier and save the model to specified path("path_model")
+
+input:  
+None
+
+return:
+None
+'''
+
+def test():
+'''
+test the model for Bilstm classifier at specified path("path_model") and output the accuracy.
+
+input:  
+None
+
+return:
+None
+'''
+
+def output_predict_sentence_to_file(label_list,correct_rate):
+'''
+out put the predict sentence to specified file("path_eval_result")
+
+input:  
+label_list: original sentences and their labels
+correct_rate: correctness of the entire test set
+
+return:
+None
+'''
+```
+

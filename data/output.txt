@@ -1,503 +1,501 @@
-Total correct rate : 0.652
-
-predict:NUM:dist    NUM:dist How far is it from Denver to Aspen ?
-predict:DESC:def    LOC:city What county is Modesto , California in ?
-predict:HUM:desc    HUM:desc Who was Galileo ?
-predict:DESC:def    DESC:def What is an atom ?
-predict:NUM:date    NUM:date When did Hawaii become a state ?
-predict:NUM:dist    NUM:dist How tall is the Sears Building ?
-predict:HUM:gr    HUM:gr George Bush purchased a small interest in which baseball team ?
-predict:LOC:other    ENTY:plant What is Australia 's national flower ?
-predict:DESC:reason    DESC:reason Why does the moon turn orange ?
-predict:DESC:def    DESC:def What is autism ?
-predict:LOC:city    LOC:city What city had a world fair in 1900 ?
-predict:LOC:other    HUM:ind What person 's head is on a dime ?
-predict:LOC:other    NUM:weight What is the average weight of a Yellow Labrador ?
-predict:HUM:ind    HUM:ind Who was the first man to fly across the Pacific Ocean ?
-predict:NUM:date    NUM:date When did Idaho become a state ?
-predict:NUM:money    NUM:other What is the life expectancy for crickets ?
-predict:LOC:other    ENTY:substance What metal has the highest melting point ?
-predict:HUM:desc    HUM:ind Who developed the vaccination against polio ?
-predict:DESC:def    DESC:def What is epilepsy ?
-predict:NUM:date    NUM:date What year did the Titanic sink ?
-predict:HUM:ind    HUM:ind Who was the first American to walk in space ?
-predict:DESC:def    DESC:def What is a biosphere ?
-predict:LOC:other    LOC:other What river in the US is known as the Big Muddy ?
-predict:DESC:def    DESC:def What is bipolar disorder ?
-predict:DESC:def    DESC:def What is cholesterol ?
-predict:HUM:ind    HUM:ind Who developed the Macintosh computer ?
-predict:DESC:def    DESC:def What is caffeine ?
-predict:LOC:city    LOC:other What imaginary line is halfway between the North and South Poles ?
-predict:LOC:other    LOC:other Where is John Wayne airport ?
-predict:DESC:def    LOC:other What hemisphere is the Philippines in ?
-predict:ENTY:cremat    NUM:speed What is the average speed of the horses at the Kentucky Derby ?
-predict:LOC:other    LOC:mount Where are the Rocky Mountains ?
-predict:DESC:def    DESC:def What are invertebrates ?
-predict:LOC:other    NUM:temp What is the temperature at the center of the earth ?
-predict:LOC:other    NUM:date When did John F. Kennedy get elected as President ?
-predict:NUM:count    NUM:period How old was Elvis Presley when he died ?
-predict:LOC:other    LOC:other Where is the Orinoco River ?
-predict:NUM:count    NUM:dist How far is the service line from the net in tennis ?
-predict:NUM:count    NUM:count How much fiber should you have per day ?
-predict:NUM:count    NUM:count How many Great Lakes are there ?
-predict:LOC:other    ENTY:plant Material called linen is made from what plant ?
-predict:DESC:def    DESC:def What is Teflon ?
-predict:DESC:def    DESC:def What is amitriptyline ?
-predict:DESC:def    DESC:def What is a shaman ?
-predict:LOC:other    ENTY:animal What is the proper name for a female walrus ?
-predict:HUM:gr    ENTY:animal What is a group of turkeys called ?
-predict:NUM:period    NUM:period How long did Rip Van Winkle sleep ?
-predict:DESC:def    DESC:def What are triglycerides ?
-predict:NUM:count    NUM:count How many liters in a gallon ?
-predict:HUM:gr    HUM:gr What is the name of the chocolate company in San Francisco ?
-predict:DESC:def    DESC:def What are amphibians ?
-predict:HUM:ind    HUM:ind Who discovered x-rays ?
-predict:NUM:date    HUM:ind Which comedian 's signature line is `` Can we talk '' ?
-predict:DESC:def    DESC:def What is fibromyalgia ?
-predict:DESC:def    DESC:desc What is done with worn or outdated flags ?
-predict:DESC:def    DESC:def What does cc in engines mean ?
-predict:NUM:date    NUM:date When did Elvis Presley die ?
-predict:LOC:city    LOC:city What is the capital of Yugoslavia ?
-predict:LOC:other    LOC:city Where is Milan ?
-predict:DESC:def    NUM:speed What is the speed hummingbirds fly ?
-predict:LOC:city    LOC:city What is the oldest city in the United States ?
-predict:LOC:other    HUM:ind What was W.C. Fields ' real name ?
-predict:LOC:other    LOC:other What river flows between Fargo , North Dakota and Moorhead , Minnesota ?
-predict:ENTY:food    ENTY:food What do bats eat ?
-predict:LOC:other    LOC:state What state did the Battle of Bighorn take place in ?
-predict:HUM:desc    HUM:desc Who was Abraham Lincoln ?
-predict:ENTY:termeq    ENTY:termeq What do you call a newborn kangaroo ?
-predict:DESC:def    DESC:def What are spider veins ?
-predict:LOC:other    NUM:date What day and month did John Lennon die ?
-predict:LOC:other    LOC:other What strait separates North America from Asia ?
-predict:NUM:other    NUM:other What is the population of Seattle ?
-predict:NUM:money    NUM:money How much was a ticket for the Titanic ?
-predict:LOC:city    LOC:city What is the largest city in the world ?
-predict:HUM:ind    HUM:ind What American composer wrote the music for `` West Side Story '' ?
-predict:LOC:other    LOC:other Where is the Mall of the America ?
-predict:DESC:def    DESC:def What is the pH scale ?
-predict:LOC:other    ENTY:currency What type of currency is used in Australia ?
-predict:DESC:manner    NUM:dist How tall is the Gateway Arch in St. Louis , MO ?
-predict:NUM:count    NUM:weight How much does the human adult female brain weigh ?
-predict:HUM:ind    HUM:ind Who was the first governor of Alaska ?
-predict:DESC:def    DESC:def What is a prism ?
-predict:NUM:date    NUM:date When was the first liver transplant ?
-predict:HUM:ind    HUM:ind Who was elected president of South Africa in 1994 ?
-predict:LOC:other    NUM:other What is the population of China ?
-predict:NUM:date    NUM:date When was Rosa Parks born ?
-predict:DESC:reason    DESC:reason Why is a ladybug helpful ?
-predict:DESC:def    DESC:def What is amoxicillin ?
-predict:HUM:ind    HUM:ind Who was the first female United States Representative ?
-predict:DESC:def    DESC:def What are xerophytes ?
-predict:LOC:country    LOC:country What country did Ponce de Leon come from ?
-predict:LOC:other    ENTY:event The U.S. Department of Treasury first issued paper currency for the U.S. during which war ?
-predict:DESC:def    DESC:def What is desktop publishing ?
-predict:LOC:other    NUM:temp What is the temperature of the sun 's surface ?
-predict:NUM:date    NUM:date What year did Canada join the United Nations ?
-predict:LOC:other    HUM:gr What is the oldest university in the US ?
-predict:LOC:other    LOC:other Where is Prince Edward Island ?
-predict:NUM:date    NUM:date Mercury , what year was it discovered ?
-predict:DESC:def    DESC:def What is cryogenics ?
-predict:DESC:def    DESC:def What are coral reefs ?
-predict:ENTY:other    ENTY:other What is the longest major league baseball-winning streak ?
-predict:DESC:def    DESC:def What is neurology ?
-predict:HUM:ind    HUM:ind Who invented the calculator ?
-predict:DESC:manner    DESC:manner How do you measure earthquakes ?
-predict:HUM:desc    HUM:desc Who is Duke Ellington ?
-predict:DESC:def    LOC:city What county is Phoenix , AZ in ?
-predict:DESC:def    DESC:def What is a micron ?
-predict:LOC:other    NUM:temp The sun 's core , what is the temperature ?
-predict:LOC:state    ENTY:animal What is the Ohio state bird ?
-predict:NUM:date    NUM:date When were William Shakespeare 's twins born ?
-predict:LOC:other    LOC:other What is the highest dam in the U.S. ?
-predict:ENTY:color    ENTY:color What color is a poison arrow frog ?
-predict:DESC:def    DESC:def What is acupuncture ?
-predict:LOC:state    NUM:dist What is the length of the coastline of the state of Alaska ?
-predict:LOC:other    HUM:ind What is the name of Neil Armstrong 's wife ?
-predict:LOC:state    ENTY:plant What is Hawaii 's state flower ?
-predict:HUM:ind    HUM:ind Who won Ms. American in 1989 ?
-predict:NUM:date    NUM:date When did the Hindenberg crash ?
-predict:DESC:def    ENTY:substance What mineral helps prevent osteoporosis ?
-predict:LOC:other    NUM:date What was the last year that the Chicago Cubs won the World Series ?
-predict:LOC:other    LOC:other Where is Perth ?
-predict:NUM:date    NUM:date What year did WWII begin ?
-predict:LOC:other    NUM:dist What is the diameter of a golf ball ?
-predict:DESC:def    DESC:def What is an eclipse ?
-predict:HUM:ind    HUM:ind Who discovered America ?
-predict:LOC:other    NUM:dist What is the earth 's diameter ?
-predict:HUM:ind    HUM:ind Which president was unmarried ?
-predict:DESC:manner    NUM:dist How wide is the Milky Way galaxy ?
-predict:HUM:gr    NUM:date During which season do most thunderstorms occur ?
-predict:DESC:def    DESC:def What is Wimbledon ?
-predict:ABBR:exp    NUM:period What is the gestation period for a cat ?
-predict:NUM:money    NUM:dist How far is a nautical mile ?
-predict:HUM:ind    HUM:ind Who was the abolitionist who led the raid on Harper 's Ferry in 1859 ?
-predict:DESC:def    DESC:def What does target heart rate mean ?
-predict:LOC:other    ENTY:product What was the first satellite to go into space ?
-predict:DESC:def    DESC:def What is foreclosure ?
-predict:ENTY:other    ENTY:other What is the major fault line near Kentucky ?
-predict:LOC:other    LOC:other Where is the Holland Tunnel ?
-predict:HUM:ind    HUM:ind Who wrote the hymn `` Amazing Grace '' ?
-predict:LOC:other    HUM:title What position did Willie Davis play in baseball ?
-predict:DESC:def    DESC:def What are platelets ?
-predict:DESC:def    DESC:def What is severance pay ?
-predict:ENTY:animal    ENTY:animal What is the name of Roy Roger 's dog ?
-predict:LOC:other    LOC:other Where are the National Archives ?
-predict:ENTY:termeq    ENTY:animal What is a baby turkey called ?
-predict:DESC:def    DESC:def What is poliomyelitis ?
-predict:LOC:other    ENTY:body What is the longest bone in the human body ?
-predict:HUM:ind    HUM:ind Who is a German philosopher ?
-predict:ENTY:other    ENTY:veh What were Christopher Columbus ' three ships ?
-predict:DESC:def    DESC:def What does Phi Beta Kappa mean ?
-predict:DESC:def    DESC:def What is nicotine ?
-predict:LOC:other    ENTY:termeq What is another name for vitamin B1 ?
-predict:HUM:ind    HUM:ind Who discovered radium ?
-predict:DESC:def    DESC:def What are sunspots ?
-predict:NUM:date    NUM:date When was Algeria colonized ?
-predict:HUM:gr    HUM:gr What baseball team was the first to make numbers part of their uniform ?
-predict:LOC:other    LOC:other What continent is Egypt on ?
-predict:LOC:city    LOC:city What is the capital of Mongolia ?
-predict:DESC:def    DESC:def What is nanotechnology ?
-predict:HUM:ind    LOC:other In the late 1700 's British convicts were used to populate which colony ?
-predict:LOC:state    LOC:state What state is the geographic center of the lower 48 states ?
-predict:DESC:def    DESC:def What is an obtuse angle ?
-predict:DESC:def    DESC:def What are polymers ?
-predict:NUM:date    NUM:date When is hurricane season in the Caribbean ?
-predict:LOC:other    LOC:other Where is the volcano Mauna Loa ?
-predict:ENTY:termeq    ENTY:termeq What is another astronomic term for the Northern Lights ?
-predict:HUM:gr    LOC:other What peninsula is Spain part of ?
-predict:NUM:date    NUM:date When was Lyndon B. Johnson born ?
-predict:DESC:def    DESC:def What is acetaminophen ?
-predict:NUM:date    LOC:state What state has the least amount of rain per year ?
-predict:HUM:ind    HUM:ind Who founded American Red Cross ?
-predict:NUM:date    NUM:date What year did the Milwaukee Braves become the Atlanta Braves ?
-predict:DESC:manner    NUM:speed How fast is alcohol absorbed ?
-predict:NUM:date    NUM:date When is the summer solstice ?
-predict:DESC:def    DESC:def What is supernova ?
-predict:LOC:other    LOC:other Where is the Shawnee National Forest ?
-predict:LOC:state    LOC:state What U.S. state 's motto is `` Live free or Die '' ?
-predict:LOC:other    LOC:other Where is the Lourve ?
-predict:NUM:date    NUM:date When was the first stamp issued ?
-predict:DESC:def    ENTY:color What primary colors do you mix to make orange ?
-predict:NUM:count    NUM:dist How far is Pluto from the sun ?
-predict:LOC:other    LOC:other What body of water are the Canary Islands in ?
-predict:DESC:def    DESC:def What is neuropathy ?
-predict:LOC:other    LOC:other Where is the Euphrates River ?
-predict:DESC:def    DESC:def What is cryptography ?
-predict:DESC:def    ENTY:substance What is natural gas composed of ?
-predict:HUM:ind    HUM:ind Who is the Prime Minister of Canada ?
-predict:LOC:other    HUM:ind What French ruler was defeated at the battle of Waterloo ?
-predict:DESC:def    DESC:def What is leukemia ?
-predict:LOC:other    LOC:other Where did Howard Hughes die ?
-predict:ABBR:exp    ENTY:substance What is the birthstone for June ?
-predict:LOC:other    ENTY:other What is the sales tax in Minnesota ?
-predict:LOC:other    NUM:dist What is the distance in miles from the earth to the sun ?
-predict:NUM:money    NUM:period What is the average life span for a chicken ?
-predict:NUM:date    NUM:date When was the first Wal-Mart store opened ?
-predict:DESC:def    DESC:def What is relative humidity ?
-predict:LOC:city    LOC:city What city has the zip code of 35824 ?
-predict:ENTY:other    ENTY:currency What currency is used in Algeria ?
-predict:HUM:ind    HUM:ind Who invented the hula hoop ?
-predict:LOC:other    ENTY:product What was the most popular toy in 1957 ?
-predict:DESC:def    ENTY:substance What is pastrami made of ?
-predict:LOC:other    ENTY:product What is the name of the satellite that the Soviet Union sent into space in 1957 ?
-predict:LOC:city    LOC:city What city 's newspaper is called `` The Enquirer '' ?
-predict:HUM:ind    HUM:ind Who invented the slinky ?
-predict:ENTY:animal    ENTY:animal What are the animals that don 't have backbones called ?
-predict:DESC:def    NUM:other What is the melting point of copper ?
-predict:LOC:other    LOC:other Where is the volcano Olympus Mons located ?
-predict:HUM:ind    HUM:ind Who was the 23rd president of the United States ?
-predict:LOC:other    NUM:temp What is the average body temperature ?
-predict:DESC:def    DESC:desc What does a defibrillator do ?
-predict:DESC:desc    DESC:desc What is the effect of acid rain ?
-predict:NUM:date    NUM:date What year did the United States abolish the draft ?
-predict:NUM:money    NUM:speed How fast is the speed of light ?
-predict:DESC:def    LOC:state What province is Montreal in ?
-predict:LOC:other    LOC:other What New York City structure is also known as the Twin Towers ?
-predict:DESC:def    DESC:def What is fungus ?
-predict:LOC:other    ENTY:lang What is the most frequently spoken language in the Netherlands ?
-predict:DESC:def    DESC:def What is sodium chloride ?
-predict:ENTY:termeq    ENTY:termeq What are the spots on dominoes called ?
-predict:NUM:count    NUM:count How many pounds in a ton ?
-predict:DESC:def    DESC:def What is influenza ?
-predict:DESC:def    DESC:def What is ozone depletion ?
-predict:NUM:date    NUM:date What year was the Mona Lisa painted ?
-predict:DESC:def    DESC:def What does `` Sitting Shiva '' mean ?
-predict:ENTY:cremat    ENTY:other What is the electrical output in Madrid , Spain ?
-predict:LOC:other    LOC:mount Which mountain range in North America stretches from Maine to Georgia ?
-predict:DESC:def    ENTY:substance What is plastic made of ?
-predict:NUM:other    NUM:other What is the population of Nigeria ?
-predict:DESC:def    DESC:desc What does your spleen do ?
-predict:LOC:other    LOC:other Where is the Grand Canyon ?
-predict:HUM:ind    HUM:ind Who invented the telephone ?
-predict:NUM:date    NUM:date What year did the U.S. buy Alaska ?
-predict:LOC:other    HUM:ind What is the name of the leader of Ireland ?
-predict:DESC:def    DESC:def What is phenylalanine ?
-predict:NUM:count    NUM:count How many gallons of water are there in a cubic foot ?
-predict:LOC:other    ENTY:other What are the two houses of the Legislative branch ?
-predict:DESC:def    DESC:def What is sonar ?
-predict:LOC:other    LOC:other In Poland , where do most people live ?
-predict:DESC:def    DESC:def What is phosphorus ?
-predict:ENTY:other    LOC:other What is the location of the Sea of Tranquility ?
-predict:NUM:count    NUM:speed How fast is sound ?
-predict:DESC:def    LOC:state What French province is cognac produced in ?
-predict:LOC:other    DESC:def What is Valentine 's Day ?
-predict:DESC:reason    DESC:reason What causes gray hair ?
-predict:DESC:def    DESC:def What is hypertension ?
-predict:DESC:def    DESC:def What is bandwidth ?
-predict:LOC:other    LOC:other What is the longest suspension bridge in the U.S. ?
-predict:DESC:def    DESC:def What is a parasite ?
-predict:LOC:other    DESC:def What is home equity ?
-predict:DESC:def    DESC:desc What do meteorologists do ?
-predict:ABBR:exp    ENTY:other What is the criterion for being legally blind ?
-predict:HUM:ind    HUM:ind Who is the tallest man in the world ?
-predict:LOC:city    LOC:city What are the twin cities ?
-predict:LOC:other    ENTY:other What did Edward Binney and Howard Smith invent in 1903 ?
-predict:DESC:def    ENTY:substance What is the statue of liberty made of ?
-predict:DESC:def    DESC:def What is pilates ?
-predict:LOC:other    LOC:other What planet is known as the `` red '' planet ?
-predict:LOC:other    NUM:dist What is the depth of the Nile river ?
-predict:ENTY:termeq    ENTY:termeq What is the colorful Korean traditional dress called ?
-predict:DESC:def    DESC:def What is Mardi Gras ?
-predict:HUM:ind    NUM:money Mexican pesos are worth what in U.S. dollars ?
-predict:HUM:ind    HUM:ind Who was the first African American to play for the Brooklyn Dodgers ?
-predict:HUM:ind    HUM:ind Who was the first Prime Minister of Canada ?
-predict:NUM:count    NUM:count How many Admirals are there in the U.S. Navy ?
-predict:LOC:other    ENTY:instru What instrument did Glenn Miller play ?
-predict:NUM:count    NUM:period How old was Joan of Arc when she died ?
-predict:DESC:def    DESC:def What does the word fortnight mean ?
-predict:DESC:def    DESC:def What is dianetics ?
-predict:LOC:city    LOC:city What is the capital of Ethiopia ?
-predict:NUM:period    NUM:period For how long is an elephant pregnant ?
-predict:DESC:manner    DESC:manner How did Janice Joplin die ?
-predict:LOC:other    ENTY:lang What is the primary language in Iceland ?
-predict:DESC:desc    DESC:desc What is the difference between AM radio stations and FM radio stations ?
-predict:DESC:def    DESC:def What is osteoporosis ?
-predict:HUM:ind    HUM:ind Who was the first woman governor in the U.S. ?
-predict:DESC:def    DESC:def What is peyote ?
-predict:LOC:other    DESC:reason What is the esophagus used for ?
-predict:DESC:def    DESC:def What is viscosity ?
-predict:NUM:date    NUM:date What year did Oklahoma become a state ?
-predict:LOC:other    ABBR:abb What is the abbreviation for Texas ?
-predict:DESC:def    ENTY:substance What is a mirror made out of ?
-predict:LOC:other    LOC:other Where on the body is a mortarboard worn ?
-predict:LOC:other    HUM:ind What was J.F.K. 's wife 's name ?
-predict:ABBR:exp    ABBR:exp What does I.V. stand for ?
-predict:DESC:def    DESC:def What is the chunnel ?
-predict:LOC:other    LOC:other Where is Hitler buried ?
-predict:DESC:def    DESC:def What are antacids ?
-predict:DESC:def    DESC:def What is pulmonary fibrosis ?
-predict:DESC:def    DESC:def What are Quaaludes ?
-predict:DESC:def    DESC:def What is naproxen ?
-predict:DESC:def    DESC:def What is strep throat ?
-predict:LOC:city    LOC:city What is the largest city in the U.S. ?
-predict:ENTY:dismed    ENTY:dismed What is foot and mouth disease ?
-predict:LOC:other    NUM:other What is the life expectancy of a dollar bill ?
-predict:ENTY:termeq    ENTY:termeq What do you call a professional map drawer ?
-predict:DESC:def    DESC:def What are Aborigines ?
-predict:DESC:def    DESC:def What is hybridization ?
-predict:ENTY:color    ENTY:color What color is indigo ?
-predict:NUM:period    NUM:period How old do you have to be in order to rent a car in Italy ?
-predict:DESC:def    ENTY:other What does a barometer measure ?
-predict:ENTY:color    ENTY:color What color is a giraffe 's tongue ?
-predict:ABBR:exp    ABBR:exp What does USPS stand for ?
-predict:NUM:date    NUM:date What year did the NFL go on strike ?
-predict:DESC:def    DESC:def What is solar wind ?
-predict:NUM:date    NUM:date What date did Neil Armstrong land on the moon ?
-predict:NUM:date    NUM:date When was Hiroshima bombed ?
-predict:LOC:other    LOC:other Where is the Savannah River ?
-predict:HUM:ind    HUM:ind Who was the first woman killed in the Vietnam War ?
-predict:LOC:other    LOC:other What planet has the strongest magnetic field of all the planets ?
-predict:HUM:ind    HUM:ind Who is the governor of Alaska ?
-predict:NUM:date    NUM:date What year did Mussolini seize power in Italy ?
-predict:LOC:city    LOC:city What is the capital of Persia ?
-predict:LOC:other    LOC:other Where is the Eiffel Tower ?
-predict:NUM:count    NUM:count How many hearts does an octopus have ?
-predict:DESC:def    DESC:def What is pneumonia ?
-predict:LOC:other    LOC:other What is the deepest lake in the US ?
-predict:DESC:def    DESC:def What is a fuel cell ?
-predict:HUM:ind    HUM:ind Who was the first U.S. president to appear on TV ?
-predict:LOC:other    LOC:other Where is the Little League Museum ?
-predict:HUM:ind    ENTY:other What are the two types of twins ?
-predict:LOC:other    LOC:other What is the brightest star ?
-predict:DESC:def    DESC:def What is diabetes ?
-predict:LOC:other    NUM:date When was President Kennedy shot ?
-predict:DESC:def    ABBR:exp What is TMJ ?
-predict:ENTY:color    ENTY:color What color is yak milk ?
-predict:LOC:other    NUM:date What date was Dwight D. Eisenhower born ?
-predict:DESC:def    ABBR:exp What does the technical term ISDN mean ?
-predict:DESC:reason    DESC:reason Why is the sun yellow ?
-predict:DESC:def    NUM:money What is the conversion rate between dollars and pounds ?
-predict:NUM:date    NUM:date When was Abraham Lincoln born ?
-predict:LOC:other    DESC:def What is the Milky Way ?
-predict:DESC:def    DESC:def What is mold ?
-predict:NUM:date    NUM:date What year was Mozart born ?
-predict:HUM:gr    ENTY:animal What is a group of frogs called ?
-predict:ENTY:animal    ENTY:veh What is the name of William Penn 's ship ?
-predict:LOC:other    NUM:other What is the melting point of gold ?
-predict:LOC:other    LOC:other What is the street address of the White House ?
-predict:DESC:def    DESC:def What is semolina ?
-predict:DESC:def    ENTY:food What fruit is Melba sauce made from ?
-predict:DESC:def    DESC:def What is Ursa Major ?
-predict:LOC:other    NUM:perc What is the percentage of water content in the human body ?
-predict:NUM:money    NUM:weight How much does water weigh ?
-predict:LOC:other    ENTY:event What was President Lyndon Johnson 's reform program called ?
-predict:DESC:def    NUM:perc What is the murder rate in Windsor , Ontario ?
-predict:HUM:ind    HUM:ind Who is the only president to serve 2 non-consecutive terms ?
-predict:LOC:other    NUM:other What is the population of Australia ?
-predict:HUM:ind    HUM:ind Who painted the ceiling of the Sistine Chapel ?
-predict:HUM:ind    ENTY:dismed Name a stimulant .
-predict:DESC:def    DESC:desc What is the effect of volcanoes on the climate ?
-predict:NUM:date    NUM:date What year did the Andy Griffith show begin ?
-predict:DESC:def    DESC:def What is acid rain ?
-predict:LOC:other    NUM:date What is the date of Mexico 's independence ?
-predict:DESC:def    LOC:other What is the location of Lake Champlain ?
-predict:LOC:state    ENTY:plant What is the Illinois state flower ?
-predict:LOC:state    ENTY:animal What is Maryland 's state bird ?
-predict:DESC:def    DESC:def What is quicksilver ?
-predict:HUM:ind    HUM:ind Who wrote `` The Divine Comedy '' ?
-predict:DESC:def    NUM:speed What is the speed of light ?
-predict:ENTY:sport    NUM:dist What is the width of a football field ?
-predict:DESC:reason    DESC:reason Why in tennis are zero points called love ?
-predict:ENTY:animal    ENTY:animal What kind of dog was Toto in the Wizard of Oz ?
-predict:DESC:def    DESC:def What is a thyroid ?
-predict:DESC:def    DESC:def What does ciao mean ?
-predict:DESC:def    ENTY:body What is the only artery that carries blue blood from the heart to the lungs ?
-predict:NUM:count    NUM:other How often does Old Faithful erupt at Yellowstone National Park ?
-predict:DESC:def    DESC:def What is acetic acid ?
-predict:LOC:other    NUM:dist What is the elevation of St. Louis , MO ?
-predict:LOC:other    ENTY:color What color does litmus paper turn when it comes into contact with a strong acid ?
-predict:LOC:other    ENTY:color What are the colors of the German flag ?
-predict:DESC:def    DESC:def What is the Moulin Rouge ?
-predict:LOC:other    LOC:other What soviet seaport is on the Black Sea ?
-predict:LOC:other    NUM:weight What is the atomic weight of silver ?
-predict:ENTY:other    ENTY:currency What currency do they use in Brazil ?
-predict:DESC:def    DESC:def What are pathogens ?
-predict:ENTY:dismed    DESC:def What is mad cow disease ?
-predict:HUM:gr    ENTY:food Name a food high in zinc .
-predict:NUM:date    NUM:date When did North Carolina enter the union ?
-predict:LOC:other    LOC:other Where do apple snails live ?
-predict:DESC:def    DESC:def What are ethics ?
-predict:ABBR:exp    ABBR:exp What does CPR stand for ?
-predict:DESC:def    DESC:def What is an annuity ?
-predict:HUM:ind    HUM:ind Who killed John F. Kennedy ?
-predict:HUM:ind    HUM:ind Who was the first vice president of the U.S. ?
-predict:DESC:def    ENTY:substance What birthstone is turquoise ?
-predict:HUM:ind    HUM:ind Who was the first US President to ride in an automobile to his inauguration ?
-predict:NUM:count    NUM:period How old was the youngest president of the United States ?
-predict:NUM:date    NUM:date When was Ulysses S. Grant born ?
-predict:DESC:def    DESC:def What is Muscular Dystrophy ?
-predict:HUM:ind    HUM:ind Who lived in the Neuschwanstein castle ?
-predict:DESC:def    DESC:def What is propylene glycol ?
-predict:DESC:def    DESC:def What is a panic disorder ?
-predict:HUM:ind    HUM:ind Who invented the instant Polaroid camera ?
-predict:DESC:def    DESC:def What is a carcinogen ?
-predict:ENTY:termeq    ENTY:animal What is a baby lion called ?
-predict:LOC:other    NUM:other What is the world 's population ?
-predict:DESC:def    DESC:def What is nepotism ?
-predict:DESC:def    DESC:def What is die-casting ?
-predict:DESC:def    DESC:def What is myopia ?
-predict:LOC:other    NUM:other What is the sales tax rate in New York ?
-predict:LOC:other    NUM:perc Developing nations comprise what percentage of the world 's population ?
-predict:LOC:other    LOC:mount What is the fourth highest mountain in the world ?
-predict:LOC:other    HUM:ind What is Shakespeare 's nickname ?
-predict:DESC:def    ENTY:substance What is the heaviest naturally occurring element ?
-predict:NUM:date    NUM:date When is Father 's Day ?
-predict:ABBR:exp    ABBR:exp What does the acronym NASA stand for ?
-predict:NUM:period    NUM:dist How long is the Columbia River in miles ?
-predict:LOC:city    LOC:city What city 's newspaper is called `` The Star '' ?
-predict:DESC:def    DESC:def What is carbon dioxide ?
-predict:LOC:other    LOC:other Where is the Mason/Dixon line ?
-predict:NUM:date    NUM:date When was the Boston tea party ?
-predict:DESC:def    DESC:def What is metabolism ?
-predict:LOC:other    HUM:ind Which U.S.A. president appeared on `` Laugh-In '' ?
-predict:DESC:def    ENTY:substance What are cigarettes made of ?
-predict:LOC:city    LOC:city What is the capital of Zimbabwe ?
-predict:ABBR:exp    ABBR:exp What does NASA stand for ?
-predict:LOC:state    ENTY:plant What is the state flower of Michigan ?
-predict:DESC:def    DESC:def What are semiconductors ?
-predict:LOC:other    DESC:def What is nuclear power ?
-predict:DESC:def    DESC:def What is a tsunami ?
-predict:HUM:ind    HUM:ind Who is the congressman from state of Texas on the armed forces committee ?
-predict:HUM:ind    HUM:ind Who was president in 1913 ?
-predict:NUM:date    NUM:date When was the first kidney transplant ?
-predict:LOC:other    LOC:other What are Canada 's two territories ?
-predict:DESC:def    ENTY:veh What was the name of the plane Lindbergh flew solo across the Atlantic ?
-predict:DESC:def    DESC:def What is genocide ?
-predict:LOC:other    LOC:other What continent is Argentina on ?
-predict:DESC:def    ENTY:other What monastery was raided by Vikings in the late eighth century ?
-predict:DESC:def    DESC:def What is an earthquake ?
-predict:LOC:other    LOC:other Where is the tallest roller coaster located ?
-predict:DESC:def    DESC:def What are enzymes ?
-predict:HUM:ind    HUM:ind Who discovered oxygen ?
-predict:DESC:def    DESC:def What is bangers and mash ?
-predict:LOC:other    ENTY:animal What is the name given to the Tiger at Louisiana State University ?
-predict:LOC:other    LOC:other Where are the British crown jewels kept ?
-predict:HUM:ind    HUM:ind Who was the first person to reach the North Pole ?
-predict:DESC:def    DESC:def What is an ulcer ?
-predict:DESC:def    DESC:def What is vertigo ?
-predict:DESC:def    DESC:def What is the spirometer test ?
-predict:NUM:date    NUM:date When is the official first day of summer ?
-predict:DESC:def    ABBR:exp What does the abbreviation SOS mean ?
-predict:LOC:other    ENTY:animal What is the smallest bird in Britain ?
-predict:HUM:ind    HUM:ind Who invented Trivial Pursuit ?
-predict:DESC:def    ENTY:substance What gasses are in the troposphere ?
-predict:LOC:country    LOC:country Which country has the most water pollution ?
-predict:LOC:other    ENTY:animal What is the scientific name for elephant ?
-predict:HUM:ind    HUM:ind Who is the actress known for her role in the movie `` Gypsy '' ?
-predict:ENTY:animal    ENTY:animal What breed of hunting dog did the Beverly Hillbillies own ?
-predict:LOC:other    LOC:other What is the rainiest place on Earth ?
-predict:HUM:ind    HUM:ind Who was the first African American to win the Nobel Prize in literature ?
-predict:NUM:date    NUM:date When is St. Patrick 's Day ?
-predict:ENTY:animal    ENTY:animal What was FDR 's dog 's name ?
-predict:ENTY:color    ENTY:color What colors need to be mixed to get the color pink ?
-predict:ENTY:sport    ENTY:sport What is the most popular sport in Japan ?
-predict:DESC:def    ENTY:food What is the active ingredient in baking soda ?
-predict:NUM:date    NUM:date When was Thomas Jefferson born ?
-predict:DESC:manner    NUM:temp How cold should a refrigerator be ?
-predict:NUM:date    NUM:date When was the telephone invented ?
-predict:ENTY:color    ENTY:color What is the most common eye color ?
-predict:LOC:other    LOC:other Where was the first golf course in the United States ?
-predict:DESC:def    DESC:def What is schizophrenia ?
-predict:DESC:def    DESC:def What is angiotensin ?
-predict:DESC:def    HUM:gr What did Jesse Jackson organize ?
-predict:LOC:other    ENTY:animal What is New York 's state bird ?
-predict:LOC:other    LOC:other What is the National Park in Utah ?
-predict:LOC:other    NUM:date What is Susan B. Anthony 's birthday ?
-predict:LOC:state    LOC:state In which state would you find the Catskill Mountains ?
-predict:ENTY:food    ENTY:termeq What do you call a word that is spelled the same backwards and forwards ?
-predict:DESC:def    DESC:def What are pediatricians ?
-predict:DESC:def    HUM:gr What chain store is headquartered in Bentonville , Arkansas ?
-predict:DESC:def    DESC:def What are solar cells ?
-predict:DESC:def    DESC:def What is compounded interest ?
-predict:DESC:def    DESC:def What are capers ?
-predict:DESC:def    DESC:def What is an antigen ?
-predict:ENTY:other    ENTY:currency What currency does Luxembourg use ?
-predict:NUM:other    NUM:other What is the population of Venezuela ?
-predict:LOC:other    ENTY:other What type of polymer is used for bulletproof vests ?
-predict:ENTY:other    ENTY:currency What currency does Argentina use ?
-predict:DESC:def    DESC:def What is a thermometer ?
-predict:LOC:city    LOC:city What Canadian city has the largest population ?
-predict:ENTY:color    ENTY:color What color are crickets ?
-predict:LOC:country    LOC:country Which country gave New York the Statue of Liberty ?
-predict:LOC:other    ENTY:product What was the name of the first U.S. satellite sent into space ?
-predict:ENTY:other    ENTY:substance What precious stone is a form of pure carbon ?
-predict:LOC:other    ENTY:substance What kind of gas is in a fluorescent bulb ?
-predict:DESC:def    DESC:def What is rheumatoid arthritis ?
-predict:LOC:other    LOC:other What river runs through Rowe , Italy ?
-predict:DESC:def    DESC:def What is cerebral palsy ?
-predict:LOC:city    LOC:city What city is also known as `` The Gateway to the West '' ?
-predict:NUM:count    NUM:dist How far away is the moon ?
-predict:DESC:def    ENTY:other What is the source of natural gas ?
-predict:LOC:other    ENTY:veh In what spacecraft did U.S. astronaut Alan Shepard make his historic 1961 flight ?
-predict:DESC:def    DESC:def What is pectin ?
-predict:DESC:def    DESC:def What is bio-diversity ?
-predict:LOC:other    ENTY:techmeth What 's the easiest way to remove wallpaper ?
-predict:NUM:date    NUM:date What year did the Titanic start on its journey ?
-predict:NUM:money    NUM:count How much of an apple is water ?
-predict:HUM:ind    HUM:ind Who was the 22nd President of the US ?
-predict:LOC:other    ENTY:currency What is the money they use in Zambia ?
-predict:NUM:count    NUM:count How many feet in a mile ?
-predict:DESC:def    ENTY:substance What is the birthstone of October ?
-predict:DESC:def    DESC:def What is e-coli ?
-predict:DESC:def    DESC:def What is e-coli ?
+Question                  Correct Label               Predict Label
+How far is it from Denver to Aspen ?       NUM:dist       ENTY:techmeth
+What county is Modesto , California in ?       LOC:city       ENTY:techmeth
+Who was Galileo ?       HUM:desc       ENTY:techmeth
+What is an atom ?       DESC:def       ENTY:techmeth
+When did Hawaii become a state ?       NUM:date       ENTY:techmeth
+How tall is the Sears Building ?       NUM:dist       ENTY:techmeth
+George Bush purchased a small interest in which baseball team ?       HUM:gr       ENTY:currency
+What is Australia 's national flower ?       ENTY:plant       LOC:other
+Why does the moon turn orange ?       DESC:reason       ENTY:product
+What is autism ?       DESC:def       ENTY:dismed
+What city had a world fair in 1900 ?       LOC:city       LOC:city
+What person 's head is on a dime ?       HUM:ind       NUM:dist
+What is the average weight of a Yellow Labrador ?       NUM:weight       NUM:ord
+Who was the first man to fly across the Pacific Ocean ?       HUM:ind       ABBR:abb
+When did Idaho become a state ?       NUM:date       LOC:city
+What is the life expectancy for crickets ?       NUM:other       ABBR:exp
+What metal has the highest melting point ?       ENTY:substance       LOC:city
+Who developed the vaccination against polio ?       HUM:ind       ENTY:techmeth
+What is epilepsy ?       DESC:def       LOC:other
+What year did the Titanic sink ?       NUM:date       ABBR:abb
+Who was the first American to walk in space ?       HUM:ind       NUM:date
+What is a biosphere ?       DESC:def       LOC:city
+What river in the US is known as the Big Muddy ?       LOC:other       LOC:city
+What is bipolar disorder ?       DESC:def       LOC:city
+What is cholesterol ?       DESC:def       NUM:dist
+Who developed the Macintosh computer ?       HUM:ind       ENTY:religion
+What is caffeine ?       DESC:def       NUM:period
+What imaginary line is halfway between the North and South Poles ?       LOC:other       ENTY:dismed
+Where is John Wayne airport ?       LOC:other       LOC:city
+What hemisphere is the Philippines in ?       LOC:other       ENTY:other
+What is the average speed of the horses at the Kentucky Derby ?       NUM:speed       ENTY:product
+Where are the Rocky Mountains ?       LOC:mount       NUM:other
+What are invertebrates ?       DESC:def       ABBR:exp
+What is the temperature at the center of the earth ?       NUM:temp       LOC:other
+When did John F. Kennedy get elected as President ?       NUM:date       ENTY:instru
+How old was Elvis Presley when he died ?       NUM:period       LOC:city
+Where is the Orinoco River ?       LOC:other       ENTY:religion
+How far is the service line from the net in tennis ?       NUM:dist       NUM:perc
+How much fiber should you have per day ?       NUM:count       ABBR:abb
+How many Great Lakes are there ?       NUM:count       NUM:ord
+Material called linen is made from what plant ?       ENTY:plant       LOC:other
+What is Teflon ?       DESC:def       ABBR:abb
+What is amitriptyline ?       DESC:def       LOC:city
+What is a shaman ?       DESC:def       LOC:city
+What is the proper name for a female walrus ?       ENTY:animal       LOC:city
+What is a group of turkeys called ?       ENTY:animal       LOC:other
+How long did Rip Van Winkle sleep ?       NUM:period       LOC:other
+What are triglycerides ?       DESC:def       ENTY:symbol
+How many liters in a gallon ?       NUM:count       ENTY:food
+What is the name of the chocolate company in San Francisco ?       HUM:gr       ENTY:product
+What are amphibians ?       DESC:def       LOC:city
+Who discovered x-rays ?       HUM:ind       ENTY:techmeth
+Which comedian 's signature line is `` Can we talk '' ?       HUM:ind       ABBR:abb
+What is fibromyalgia ?       DESC:def       ABBR:abb
+What is done with worn or outdated flags ?       DESC:desc       ENTY:currency
+What does cc in engines mean ?       DESC:def       ENTY:techmeth
+When did Elvis Presley die ?       NUM:date       ENTY:currency
+What is the capital of Yugoslavia ?       LOC:city       ENTY:food
+Where is Milan ?       LOC:city       NUM:period
+What is the speed hummingbirds fly ?       NUM:speed       ENTY:product
+What is the oldest city in the United States ?       LOC:city       ENTY:dismed
+What was W.C. Fields ' real name ?       HUM:ind       NUM:date
+What river flows between Fargo , North Dakota and Moorhead , Minnesota ?       LOC:other       ENTY:sport
+What do bats eat ?       ENTY:food       ENTY:lang
+What state did the Battle of Bighorn take place in ?       LOC:state       ENTY:techmeth
+Who was Abraham Lincoln ?       HUM:desc       ENTY:event
+What do you call a newborn kangaroo ?       ENTY:termeq       ENTY:techmeth
+What are spider veins ?       DESC:def       NUM:ord
+What day and month did John Lennon die ?       NUM:date       LOC:other
+What strait separates North America from Asia ?       LOC:other       ENTY:techmeth
+What is the population of Seattle ?       NUM:other       ABBR:abb
+How much was a ticket for the Titanic ?       NUM:money       LOC:city
+What is the largest city in the world ?       LOC:city       ENTY:techmeth
+What American composer wrote the music for `` West Side Story '' ?       HUM:ind       ENTY:techmeth
+Where is the Mall of the America ?       LOC:other       ENTY:techmeth
+What is the pH scale ?       DESC:def       NUM:ord
+What type of currency is used in Australia ?       ENTY:currency       ENTY:techmeth
+How tall is the Gateway Arch in St. Louis , MO ?       NUM:dist       ABBR:abb
+How much does the human adult female brain weigh ?       NUM:weight       LOC:state
+Who was the first governor of Alaska ?       HUM:ind       ENTY:techmeth
+What is a prism ?       DESC:def       ABBR:abb
+When was the first liver transplant ?       NUM:date       ENTY:techmeth
+Who was elected president of South Africa in 1994 ?       HUM:ind       ENTY:techmeth
+What is the population of China ?       NUM:other       LOC:city
+When was Rosa Parks born ?       NUM:date       ENTY:other
+Why is a ladybug helpful ?       DESC:reason       LOC:state
+What is amoxicillin ?       DESC:def       ENTY:symbol
+Who was the first female United States Representative ?       HUM:ind       ENTY:food
+What are xerophytes ?       DESC:def       NUM:date
+What country did Ponce de Leon come from ?       LOC:country       ENTY:techmeth
+The U.S. Department of Treasury first issued paper currency for the U.S. during which war ?       ENTY:event       ENTY:techmeth
+What is desktop publishing ?       DESC:def       ENTY:techmeth
+What is the temperature of the sun 's surface ?       NUM:temp       ABBR:abb
+What year did Canada join the United Nations ?       NUM:date       ENTY:techmeth
+What is the oldest university in the US ?       HUM:gr       ENTY:techmeth
+Where is Prince Edward Island ?       LOC:other       NUM:other
+Mercury , what year was it discovered ?       NUM:date       ENTY:techmeth
+What is cryogenics ?       DESC:def       LOC:other
+What are coral reefs ?       DESC:def       ENTY:instru
+What is the longest major league baseball-winning streak ?       ENTY:other       ENTY:techmeth
+What is neurology ?       DESC:def       ABBR:abb
+Who invented the calculator ?       HUM:ind       ENTY:techmeth
+How do you measure earthquakes ?       DESC:manner       ENTY:currency
+Who is Duke Ellington ?       HUM:desc       ENTY:techmeth
+What county is Phoenix , AZ in ?       LOC:city       ENTY:food
+What is a micron ?       DESC:def       LOC:state
+The sun 's core , what is the temperature ?       NUM:temp       NUM:perc
+What is the Ohio state bird ?       ENTY:animal       ENTY:techmeth
+When were William Shakespeare 's twins born ?       NUM:date       ENTY:techmeth
+What is the highest dam in the U.S. ?       LOC:other       ENTY:techmeth
+What color is a poison arrow frog ?       ENTY:color       LOC:city
+What is acupuncture ?       DESC:def       ABBR:abb
+What is the length of the coastline of the state of Alaska ?       NUM:dist       ENTY:color
+What is the name of Neil Armstrong 's wife ?       HUM:ind       ENTY:techmeth
+What is Hawaii 's state flower ?       ENTY:plant       ENTY:techmeth
+Who won Ms. American in 1989 ?       HUM:ind       ABBR:exp
+When did the Hindenberg crash ?       NUM:date       LOC:other
+What mineral helps prevent osteoporosis ?       ENTY:substance       ABBR:abb
+What was the last year that the Chicago Cubs won the World Series ?       NUM:date       ENTY:product
+Where is Perth ?       LOC:other       ENTY:techmeth
+What year did WWII begin ?       NUM:date       ENTY:lang
+What is the diameter of a golf ball ?       NUM:dist       ENTY:currency
+What is an eclipse ?       DESC:def       ENTY:techmeth
+Who discovered America ?       HUM:ind       ABBR:abb
+What is the earth 's diameter ?       NUM:dist       ABBR:abb
+Which president was unmarried ?       HUM:ind       ENTY:techmeth
+How wide is the Milky Way galaxy ?       NUM:dist       ENTY:techmeth
+During which season do most thunderstorms occur ?       NUM:date       ENTY:food
+What is Wimbledon ?       DESC:def       LOC:city
+What is the gestation period for a cat ?       NUM:period       ENTY:currency
+How far is a nautical mile ?       NUM:dist       LOC:state
+Who was the abolitionist who led the raid on Harper 's Ferry in 1859 ?       HUM:ind       ENTY:dismed
+What does target heart rate mean ?       DESC:def       ENTY:techmeth
+What was the first satellite to go into space ?       ENTY:product       ENTY:symbol
+What is foreclosure ?       DESC:def       ABBR:abb
+What is the major fault line near Kentucky ?       ENTY:other       ABBR:abb
+Where is the Holland Tunnel ?       LOC:other       LOC:other
+Who wrote the hymn `` Amazing Grace '' ?       HUM:ind       HUM:desc
+What position did Willie Davis play in baseball ?       HUM:title       ABBR:exp
+What are platelets ?       DESC:def       ENTY:techmeth
+What is severance pay ?       DESC:def       ENTY:techmeth
+What is the name of Roy Roger 's dog ?       ENTY:animal       ENTY:techmeth
+Where are the National Archives ?       LOC:other       ENTY:techmeth
+What is a baby turkey called ?       ENTY:animal       ENTY:product
+What is poliomyelitis ?       DESC:def       LOC:other
+What is the longest bone in the human body ?       ENTY:body       ABBR:abb
+Who is a German philosopher ?       HUM:ind       ENTY:lang
+What were Christopher Columbus ' three ships ?       ENTY:veh       NUM:date
+What does Phi Beta Kappa mean ?       DESC:def       NUM:speed
+What is nicotine ?       DESC:def       DESC:manner
+What is another name for vitamin B1 ?       ENTY:termeq       ABBR:abb
+Who discovered radium ?       HUM:ind       ABBR:abb
+What are sunspots ?       DESC:def       NUM:other
+When was Algeria colonized ?       NUM:date       ENTY:lang
+What baseball team was the first to make numbers part of their uniform ?       HUM:gr       ENTY:product
+What continent is Egypt on ?       LOC:other       NUM:perc
+What is the capital of Mongolia ?       LOC:city       ENTY:currency
+What is nanotechnology ?       DESC:def       ENTY:techmeth
+In the late 1700 's British convicts were used to populate which colony ?       LOC:other       ABBR:abb
+What state is the geographic center of the lower 48 states ?       LOC:state       ENTY:food
+What is an obtuse angle ?       DESC:def       ENTY:dismed
+What are polymers ?       DESC:def       ABBR:abb
+When is hurricane season in the Caribbean ?       NUM:date       NUM:period
+Where is the volcano Mauna Loa ?       LOC:other       LOC:other
+What is another astronomic term for the Northern Lights ?       ENTY:termeq       NUM:dist
+What peninsula is Spain part of ?       LOC:other       ENTY:techmeth
+When was Lyndon B. Johnson born ?       NUM:date       NUM:ord
+What is acetaminophen ?       DESC:def       ABBR:abb
+What state has the least amount of rain per year ?       LOC:state       ENTY:sport
+Who founded American Red Cross ?       HUM:ind       ABBR:exp
+What year did the Milwaukee Braves become the Atlanta Braves ?       NUM:date       ENTY:food
+How fast is alcohol absorbed ?       NUM:speed       ABBR:exp
+When is the summer solstice ?       NUM:date       NUM:speed
+What is supernova ?       DESC:def       ABBR:abb
+Where is the Shawnee National Forest ?       LOC:other       ENTY:techmeth
+What U.S. state 's motto is `` Live free or Die '' ?       LOC:state       ABBR:abb
+Where is the Lourve ?       LOC:other       ENTY:techmeth
+When was the first stamp issued ?       NUM:date       ABBR:abb
+What primary colors do you mix to make orange ?       ENTY:color       ENTY:techmeth
+How far is Pluto from the sun ?       NUM:dist       ENTY:techmeth
+What body of water are the Canary Islands in ?       LOC:other       ABBR:abb
+What is neuropathy ?       DESC:def       ENTY:techmeth
+Where is the Euphrates River ?       LOC:other       ENTY:letter
+What is cryptography ?       DESC:def       ENTY:product
+What is natural gas composed of ?       ENTY:substance       ENTY:techmeth
+Who is the Prime Minister of Canada ?       HUM:ind       ABBR:exp
+What French ruler was defeated at the battle of Waterloo ?       HUM:ind       ENTY:techmeth
+What is leukemia ?       DESC:def       LOC:state
+Where did Howard Hughes die ?       LOC:other       LOC:other
+What is the birthstone for June ?       ENTY:substance       LOC:other
+What is the sales tax in Minnesota ?       ENTY:other       ENTY:techmeth
+What is the distance in miles from the earth to the sun ?       NUM:dist       NUM:other
+What is the average life span for a chicken ?       NUM:period       LOC:state
+When was the first Wal-Mart store opened ?       NUM:date       ENTY:techmeth
+What is relative humidity ?       DESC:def       LOC:city
+What city has the zip code of 35824 ?       LOC:city       LOC:other
+What currency is used in Algeria ?       ENTY:currency       ENTY:techmeth
+Who invented the hula hoop ?       HUM:ind       ENTY:techmeth
+What was the most popular toy in 1957 ?       ENTY:product       ENTY:techmeth
+What is pastrami made of ?       ENTY:substance       LOC:state
+What is the name of the satellite that the Soviet Union sent into space in 1957 ?       ENTY:product       ENTY:lang
+What city 's newspaper is called `` The Enquirer '' ?       LOC:city       ENTY:event
+Who invented the slinky ?       HUM:ind       LOC:state
+What are the animals that don 't have backbones called ?       ENTY:animal       ENTY:color
+What is the melting point of copper ?       NUM:other       LOC:city
+Where is the volcano Olympus Mons located ?       LOC:other       ENTY:currency
+Who was the 23rd president of the United States ?       HUM:ind       LOC:other
+What is the average body temperature ?       NUM:temp       ABBR:abb
+What does a defibrillator do ?       DESC:desc       NUM:speed
+What is the effect of acid rain ?       DESC:desc       ENTY:techmeth
+What year did the United States abolish the draft ?       NUM:date       ENTY:lang
+How fast is the speed of light ?       NUM:speed       ENTY:termeq
+What province is Montreal in ?       LOC:state       NUM:ord
+What New York City structure is also known as the Twin Towers ?       LOC:other       LOC:state
+What is fungus ?       DESC:def       ENTY:techmeth
+What is the most frequently spoken language in the Netherlands ?       ENTY:lang       ENTY:techmeth
+What is sodium chloride ?       DESC:def       ABBR:abb
+What are the spots on dominoes called ?       ENTY:termeq       NUM:speed
+How many pounds in a ton ?       NUM:count       ENTY:veh
+What is influenza ?       DESC:def       NUM:perc
+What is ozone depletion ?       DESC:def       ENTY:color
+What year was the Mona Lisa painted ?       NUM:date       ENTY:food
+What does `` Sitting Shiva '' mean ?       DESC:def       NUM:dist
+What is the electrical output in Madrid , Spain ?       ENTY:other       LOC:city
+Which mountain range in North America stretches from Maine to Georgia ?       LOC:mount       ENTY:techmeth
+What is plastic made of ?       ENTY:substance       ENTY:techmeth
+What is the population of Nigeria ?       NUM:other       NUM:period
+What does your spleen do ?       DESC:desc       NUM:date
+Where is the Grand Canyon ?       LOC:other       ENTY:techmeth
+Who invented the telephone ?       HUM:ind       ENTY:body
+What year did the U.S. buy Alaska ?       NUM:date       NUM:period
+What is the name of the leader of Ireland ?       HUM:ind       ENTY:lang
+What is phenylalanine ?       DESC:def       LOC:city
+How many gallons of water are there in a cubic foot ?       NUM:count       ENTY:instru
+What are the two houses of the Legislative branch ?       ENTY:other       ENTY:substance
+What is sonar ?       DESC:def       LOC:city
+In Poland , where do most people live ?       LOC:other       ENTY:dismed
+What is phosphorus ?       DESC:def       ENTY:product
+What is the location of the Sea of Tranquility ?       LOC:other       NUM:other
+How fast is sound ?       NUM:speed       LOC:other
+What French province is cognac produced in ?       LOC:state       ABBR:abb
+What is Valentine 's Day ?       DESC:def       LOC:city
+What causes gray hair ?       DESC:reason       ENTY:techmeth
+What is hypertension ?       DESC:def       ABBR:abb
+What is bandwidth ?       DESC:def       LOC:city
+What is the longest suspension bridge in the U.S. ?       LOC:other       ENTY:techmeth
+What is a parasite ?       DESC:def       LOC:city
+What is home equity ?       DESC:def       ENTY:techmeth
+What do meteorologists do ?       DESC:desc       LOC:city
+What is the criterion for being legally blind ?       ENTY:other       ENTY:currency
+Who is the tallest man in the world ?       HUM:ind       LOC:state
+What are the twin cities ?       LOC:city       ENTY:product
+What did Edward Binney and Howard Smith invent in 1903 ?       ENTY:other       ENTY:other
+What is the statue of liberty made of ?       ENTY:substance       ENTY:techmeth
+What is pilates ?       DESC:def       ENTY:symbol
+What planet is known as the `` red '' planet ?       LOC:other       ENTY:techmeth
+What is the depth of the Nile river ?       NUM:dist       ENTY:color
+What is the colorful Korean traditional dress called ?       ENTY:termeq       ENTY:techmeth
+What is Mardi Gras ?       DESC:def       ENTY:techmeth
+Mexican pesos are worth what in U.S. dollars ?       NUM:money       ENTY:techmeth
+Who was the first African American to play for the Brooklyn Dodgers ?       HUM:ind       LOC:city
+Who was the first Prime Minister of Canada ?       HUM:ind       LOC:city
+How many Admirals are there in the U.S. Navy ?       NUM:count       ENTY:techmeth
+What instrument did Glenn Miller play ?       ENTY:instru       ENTY:techmeth
+How old was Joan of Arc when she died ?       NUM:period       ABBR:abb
+What does the word fortnight mean ?       DESC:def       LOC:city
+What is dianetics ?       DESC:def       ENTY:techmeth
+What is the capital of Ethiopia ?       LOC:city       ABBR:abb
+For how long is an elephant pregnant ?       NUM:period       LOC:other
+How did Janice Joplin die ?       DESC:manner       LOC:other
+What is the primary language in Iceland ?       ENTY:lang       ABBR:abb
+What is the difference between AM radio stations and FM radio stations ?       DESC:desc       NUM:speed
+What is osteoporosis ?       DESC:def       LOC:other
+Who was the first woman governor in the U.S. ?       HUM:ind       LOC:other
+What is peyote ?       DESC:def       LOC:other
+What is the esophagus used for ?       DESC:reason       ABBR:abb
+What is viscosity ?       DESC:def       ENTY:techmeth
+What year did Oklahoma become a state ?       NUM:date       ENTY:techmeth
+What is the abbreviation for Texas ?       ABBR:abb       NUM:dist
+What is a mirror made out of ?       ENTY:substance       ENTY:currency
+Where on the body is a mortarboard worn ?       LOC:other       LOC:city
+What was J.F.K. 's wife 's name ?       HUM:ind       ENTY:techmeth
+What does I.V. stand for ?       ABBR:exp       ENTY:techmeth
+What is the chunnel ?       DESC:def       ENTY:techmeth
+Where is Hitler buried ?       LOC:other       LOC:other
+What are antacids ?       DESC:def       ENTY:techmeth
+What is pulmonary fibrosis ?       DESC:def       ENTY:techmeth
+What are Quaaludes ?       DESC:def       ABBR:abb
+What is naproxen ?       DESC:def       NUM:ord
+What is strep throat ?       DESC:def       ENTY:techmeth
+What is the largest city in the U.S. ?       LOC:city       ENTY:letter
+What is foot and mouth disease ?       ENTY:dismed       ABBR:abb
+What is the life expectancy of a dollar bill ?       NUM:other       ENTY:techmeth
+What do you call a professional map drawer ?       ENTY:termeq       ABBR:abb
+What are Aborigines ?       DESC:def       ENTY:techmeth
+What is hybridization ?       DESC:def       ENTY:food
+What color is indigo ?       ENTY:color       LOC:other
+How old do you have to be in order to rent a car in Italy ?       NUM:period       ENTY:techmeth
+What does a barometer measure ?       ENTY:other       ENTY:techmeth
+What color is a giraffe 's tongue ?       ENTY:color       LOC:other
+What does USPS stand for ?       ABBR:exp       ENTY:instru
+What year did the NFL go on strike ?       NUM:date       ENTY:food
+What is solar wind ?       DESC:def       NUM:ord
+What date did Neil Armstrong land on the moon ?       NUM:date       LOC:other
+When was Hiroshima bombed ?       NUM:date       ENTY:techmeth
+Where is the Savannah River ?       LOC:other       ENTY:techmeth
+Who was the first woman killed in the Vietnam War ?       HUM:ind       ENTY:lang
+What planet has the strongest magnetic field of all the planets ?       LOC:other       ENTY:techmeth
+Who is the governor of Alaska ?       HUM:ind       ENTY:dismed
+What year did Mussolini seize power in Italy ?       NUM:date       ABBR:abb
+What is the capital of Persia ?       LOC:city       ENTY:techmeth
+Where is the Eiffel Tower ?       LOC:other       LOC:other
+How many hearts does an octopus have ?       NUM:count       ABBR:exp
+What is pneumonia ?       DESC:def       ENTY:techmeth
+What is the deepest lake in the US ?       LOC:other       ENTY:lang
+What is a fuel cell ?       DESC:def       NUM:date
+Who was the first U.S. president to appear on TV ?       HUM:ind       LOC:other
+Where is the Little League Museum ?       LOC:other       LOC:other
+What are the two types of twins ?       ENTY:other       ENTY:sport
+What is the brightest star ?       LOC:other       ENTY:food
+What is diabetes ?       DESC:def       LOC:city
+When was President Kennedy shot ?       NUM:date       LOC:city
+What is TMJ ?       ABBR:exp       ENTY:techmeth
+What color is yak milk ?       ENTY:color       ABBR:abb
+What date was Dwight D. Eisenhower born ?       NUM:date       LOC:city
+What does the technical term ISDN mean ?       ABBR:exp       ENTY:techmeth
+Why is the sun yellow ?       DESC:reason       LOC:state
+What is the conversion rate between dollars and pounds ?       NUM:money       ENTY:techmeth
+When was Abraham Lincoln born ?       NUM:date       ENTY:techmeth
+What is the Milky Way ?       DESC:def       ABBR:abb
+What is mold ?       DESC:def       ENTY:techmeth
+What year was Mozart born ?       NUM:date       ENTY:techmeth
+What is a group of frogs called ?       ENTY:animal       ENTY:techmeth
+What is the name of William Penn 's ship ?       ENTY:veh       ABBR:abb
+What is the melting point of gold ?       NUM:other       ENTY:currency
+What is the street address of the White House ?       LOC:other       LOC:city
+What is semolina ?       DESC:def       NUM:other
+What fruit is Melba sauce made from ?       ENTY:food       ENTY:techmeth
+What is Ursa Major ?       DESC:def       LOC:state
+What is the percentage of water content in the human body ?       NUM:perc       ENTY:instru
+How much does water weigh ?       NUM:weight       ENTY:sport
+What was President Lyndon Johnson 's reform program called ?       ENTY:event       NUM:volsize
+What is the murder rate in Windsor , Ontario ?       NUM:perc       ABBR:abb
+Who is the only president to serve 2 non-consecutive terms ?       HUM:ind       ENTY:food
+What is the population of Australia ?       NUM:other       ENTY:lang
+Who painted the ceiling of the Sistine Chapel ?       HUM:ind       LOC:city
+Name a stimulant .       ENTY:dismed       ABBR:abb
+What is the effect of volcanoes on the climate ?       DESC:desc       ABBR:abb
+What year did the Andy Griffith show begin ?       NUM:date       LOC:city
+What is acid rain ?       DESC:def       ABBR:abb
+What is the date of Mexico 's independence ?       NUM:date       ENTY:product
+What is the location of Lake Champlain ?       LOC:other       ENTY:techmeth
+What is the Illinois state flower ?       ENTY:plant       ENTY:techmeth
+What is Maryland 's state bird ?       ENTY:animal       ABBR:abb
+What is quicksilver ?       DESC:def       ABBR:abb
+Who wrote `` The Divine Comedy '' ?       HUM:ind       ENTY:symbol
+What is the speed of light ?       NUM:speed       ENTY:sport
+What is the width of a football field ?       NUM:dist       ENTY:techmeth
+Why in tennis are zero points called love ?       DESC:reason       LOC:state
+What kind of dog was Toto in the Wizard of Oz ?       ENTY:animal       ENTY:food
+What is a thyroid ?       DESC:def       ENTY:techmeth
+What does ciao mean ?       DESC:def       ENTY:techmeth
+What is the only artery that carries blue blood from the heart to the lungs ?       ENTY:body       LOC:state
+How often does Old Faithful erupt at Yellowstone National Park ?       NUM:other       ENTY:techmeth
+What is acetic acid ?       DESC:def       NUM:perc
+What is the elevation of St. Louis , MO ?       NUM:dist       NUM:date
+What color does litmus paper turn when it comes into contact with a strong acid ?       ENTY:color       ABBR:abb
+What are the colors of the German flag ?       ENTY:color       ABBR:abb
+What is the Moulin Rouge ?       DESC:def       LOC:other
+What soviet seaport is on the Black Sea ?       LOC:other       ENTY:techmeth
+What is the atomic weight of silver ?       NUM:weight       LOC:other
+What currency do they use in Brazil ?       ENTY:currency       ENTY:cremat
+What are pathogens ?       DESC:def       ENTY:techmeth
+What is mad cow disease ?       DESC:def       ENTY:techmeth
+Name a food high in zinc .       ENTY:food       ENTY:food
+When did North Carolina enter the union ?       NUM:date       ABBR:abb
+Where do apple snails live ?       LOC:other       NUM:volsize
+What are ethics ?       DESC:def       LOC:city
+What does CPR stand for ?       ABBR:exp       LOC:other
+What is an annuity ?       DESC:def       ENTY:techmeth
+Who killed John F. Kennedy ?       HUM:ind       LOC:city
+Who was the first vice president of the U.S. ?       HUM:ind       ENTY:currency
+What birthstone is turquoise ?       ENTY:substance       LOC:other
+Who was the first US President to ride in an automobile to his inauguration ?       HUM:ind       NUM:volsize
+How old was the youngest president of the United States ?       NUM:period       ENTY:techmeth
+When was Ulysses S. Grant born ?       NUM:date       NUM:weight
+What is Muscular Dystrophy ?       DESC:def       ENTY:techmeth
+Who lived in the Neuschwanstein castle ?       HUM:ind       LOC:state
+What is propylene glycol ?       DESC:def       LOC:city
+What is a panic disorder ?       DESC:def       ENTY:body
+Who invented the instant Polaroid camera ?       HUM:ind       ENTY:techmeth
+What is a carcinogen ?       DESC:def       ENTY:techmeth
+What is a baby lion called ?       ENTY:animal       ENTY:techmeth
+What is the world 's population ?       NUM:other       ENTY:product
+What is nepotism ?       DESC:def       ENTY:veh
+What is die-casting ?       DESC:def       NUM:dist
+What is myopia ?       DESC:def       ENTY:techmeth
+What is the sales tax rate in New York ?       NUM:other       NUM:other
+Developing nations comprise what percentage of the world 's population ?       NUM:perc       ENTY:food
+What is the fourth highest mountain in the world ?       LOC:mount       ENTY:other
+What is Shakespeare 's nickname ?       HUM:ind       LOC:city
+What is the heaviest naturally occurring element ?       ENTY:substance       ABBR:exp
+When is Father 's Day ?       NUM:date       ENTY:currency
+What does the acronym NASA stand for ?       ABBR:exp       HUM:desc
+How long is the Columbia River in miles ?       NUM:dist       NUM:date
+What city 's newspaper is called `` The Star '' ?       LOC:city       ENTY:techmeth
+What is carbon dioxide ?       DESC:def       ABBR:abb
+Where is the Mason/Dixon line ?       LOC:other       ENTY:techmeth
+When was the Boston tea party ?       NUM:date       ENTY:techmeth
+What is metabolism ?       DESC:def       ENTY:product
+Which U.S.A. president appeared on `` Laugh-In '' ?       HUM:ind       NUM:perc
+What are cigarettes made of ?       ENTY:substance       ENTY:currency
+What is the capital of Zimbabwe ?       LOC:city       LOC:other
+What does NASA stand for ?       ABBR:exp       ENTY:techmeth
+What is the state flower of Michigan ?       ENTY:plant       ABBR:abb
+What are semiconductors ?       DESC:def       ENTY:sport
+What is nuclear power ?       DESC:def       ENTY:techmeth
+What is a tsunami ?       DESC:def       ENTY:other
+Who is the congressman from state of Texas on the armed forces committee ?       HUM:ind       LOC:other
+Who was president in 1913 ?       HUM:ind       LOC:other
+When was the first kidney transplant ?       NUM:date       LOC:city
+What are Canada 's two territories ?       LOC:other       ENTY:religion
+What was the name of the plane Lindbergh flew solo across the Atlantic ?       ENTY:veh       ENTY:techmeth
+What is genocide ?       DESC:def       ENTY:lang
+What continent is Argentina on ?       LOC:other       ENTY:techmeth
+What monastery was raided by Vikings in the late eighth century ?       ENTY:other       NUM:count
+What is an earthquake ?       DESC:def       ENTY:sport
+Where is the tallest roller coaster located ?       LOC:other       LOC:other
+What are enzymes ?       DESC:def       ENTY:instru
+Who discovered oxygen ?       HUM:ind       ENTY:currency
+What is bangers and mash ?       DESC:def       ENTY:techmeth
+What is the name given to the Tiger at Louisiana State University ?       ENTY:animal       ENTY:techmeth
+Where are the British crown jewels kept ?       LOC:other       ENTY:techmeth
+Who was the first person to reach the North Pole ?       HUM:ind       ABBR:abb
+What is an ulcer ?       DESC:def       ENTY:techmeth
+What is vertigo ?       DESC:def       ENTY:other
+What is the spirometer test ?       DESC:def       NUM:dist
+When is the official first day of summer ?       NUM:date       LOC:city
+What does the abbreviation SOS mean ?       ABBR:exp       ENTY:techmeth
+What is the smallest bird in Britain ?       ENTY:animal       ENTY:techmeth
+Who invented Trivial Pursuit ?       HUM:ind       ENTY:food
+What gasses are in the troposphere ?       ENTY:substance       ENTY:techmeth
+Which country has the most water pollution ?       LOC:country       ABBR:abb
+What is the scientific name for elephant ?       ENTY:animal       ENTY:lang
+Who is the actress known for her role in the movie `` Gypsy '' ?       HUM:ind       ABBR:abb
+What breed of hunting dog did the Beverly Hillbillies own ?       ENTY:animal       ABBR:abb
+What is the rainiest place on Earth ?       LOC:other       ENTY:techmeth
+Who was the first African American to win the Nobel Prize in literature ?       HUM:ind       ENTY:techmeth
+When is St. Patrick 's Day ?       NUM:date       ENTY:techmeth
+What was FDR 's dog 's name ?       ENTY:animal       ENTY:techmeth
+What colors need to be mixed to get the color pink ?       ENTY:color       ENTY:techmeth
+What is the most popular sport in Japan ?       ENTY:sport       ENTY:techmeth
+What is the active ingredient in baking soda ?       ENTY:food       ENTY:techmeth
+When was Thomas Jefferson born ?       NUM:date       ENTY:sport
+How cold should a refrigerator be ?       NUM:temp       ENTY:techmeth
+When was the telephone invented ?       NUM:date       ENTY:termeq
+What is the most common eye color ?       ENTY:color       ENTY:techmeth
+Where was the first golf course in the United States ?       LOC:other       ENTY:symbol
+What is schizophrenia ?       DESC:def       ENTY:techmeth
+What is angiotensin ?       DESC:def       ENTY:techmeth
+What did Jesse Jackson organize ?       HUM:gr       ENTY:techmeth
+What is New York 's state bird ?       ENTY:animal       LOC:other
+What is the National Park in Utah ?       LOC:other       ABBR:abb
+What is Susan B. Anthony 's birthday ?       NUM:date       ENTY:color
+In which state would you find the Catskill Mountains ?       LOC:state       ENTY:food
+What do you call a word that is spelled the same backwards and forwards ?       ENTY:termeq       NUM:other
+What are pediatricians ?       DESC:def       ENTY:techmeth
+What chain store is headquartered in Bentonville , Arkansas ?       HUM:gr       ABBR:abb
+What are solar cells ?       DESC:def       HUM:ind
+What is compounded interest ?       DESC:def       LOC:other
+What are capers ?       DESC:def       ABBR:abb
+What is an antigen ?       DESC:def       ENTY:techmeth
+What currency does Luxembourg use ?       ENTY:currency       LOC:other
+What is the population of Venezuela ?       NUM:other       ENTY:techmeth
+What type of polymer is used for bulletproof vests ?       ENTY:other       ENTY:symbol
+What currency does Argentina use ?       ENTY:currency       LOC:other
+What is a thermometer ?       DESC:def       ENTY:product
+What Canadian city has the largest population ?       LOC:city       ENTY:techmeth
+What color are crickets ?       ENTY:color       ENTY:techmeth
+Which country gave New York the Statue of Liberty ?       LOC:country       ENTY:food
+What was the name of the first U.S. satellite sent into space ?       ENTY:product       LOC:other
+What precious stone is a form of pure carbon ?       ENTY:substance       ENTY:techmeth
+What kind of gas is in a fluorescent bulb ?       ENTY:substance       ENTY:techmeth
+What is rheumatoid arthritis ?       DESC:def       ENTY:food
+What river runs through Rowe , Italy ?       LOC:other       ENTY:product
+What is cerebral palsy ?       DESC:def       NUM:date
+What city is also known as `` The Gateway to the West '' ?       LOC:city       LOC:other
+How far away is the moon ?       NUM:dist       LOC:city
+What is the source of natural gas ?       ENTY:other       NUM:date
+In what spacecraft did U.S. astronaut Alan Shepard make his historic 1961 flight ?       ENTY:veh       ENTY:techmeth
+What is pectin ?       DESC:def       ENTY:dismed
+What is bio-diversity ?       DESC:def       ENTY:techmeth
+What 's the easiest way to remove wallpaper ?       ENTY:techmeth       ENTY:techmeth
+What year did the Titanic start on its journey ?       NUM:date       ENTY:sport
+How much of an apple is water ?       NUM:count       ENTY:techmeth
+Who was the 22nd President of the US ?       HUM:ind       LOC:city
+What is the money they use in Zambia ?       ENTY:currency       ENTY:food
+How many feet in a mile ?       NUM:count       LOC:other
+What is the birthstone of October ?       ENTY:substance       LOC:city
+What is e-coli        DESC:def       ENTY:techmeth
