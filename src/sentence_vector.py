@@ -7,6 +7,7 @@ from src.tokenization import tokenization
 from src.word_embeddings import get_word_embedding
 from src import global_value as gv
 
+
 '''
 输入：句子矩阵 n*token
 1. 遍历句子每个token
@@ -48,9 +49,9 @@ def bag_of_word_sentences(type='randomly',freeze=True):
     dev_labels, dev_sentences = sentence_processing(conf.get('param', 'path_dev'))
     test_labels, test_sentences = sentence_processing(conf.get('param', 'path_test'))
 
-    train_sentences = lower_first_letter(train_sentences)
-    test_sentences = lower_first_letter(test_sentences)
-    dev_sentences = lower_first_letter(dev_sentences)
+    train_sentences = lower_first_letter(train_sentences,conf.get('param','lowercase'))
+    test_sentences = lower_first_letter(test_sentences,conf.get('param','lowercase'))
+    dev_sentences = lower_first_letter(dev_sentences,conf.get('param','lowercase'))
 
     read_stop = read_stoplist()
 
