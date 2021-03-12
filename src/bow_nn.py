@@ -50,11 +50,11 @@ class QuestionClassifier(nn.Module):
             loss.backward()
             self.optimizer.step()
 
-    def test_model(self,test_sentence_vectors,test_labels,output_error=False):
+    def test_model(self, test_sentence_vectors, test_labels, output_predict=False):
         # calculate correct rate
         data_size = len(test_sentence_vectors)
         correct_num = 0
-        error_list = []
+        predict_list = []
         for i in range(len(test_labels)):
             bow_vec = Variable(test_sentence_vectors[i])
             label = test_labels[i]
@@ -63,24 +63,27 @@ class QuestionClassifier(nn.Module):
             pre_max_poss, index = torch.max(output, 1)
             if label == int(index):
                 correct_num += 1
-            else:
-                if(output_error):
-                    for key in self.label_to_ix:
-                        if int(index)==self.label_to_ix[key]:
-                            error_list.append((i,key))
-                            break
-        if(output_error):
-            output_error_sentence_to_file(error_list)
+            if(output_predict):
+                for key in self.label_to_ix:
+                    if int(index)==self.label_to_ix[key]:
+                        predict_list.append((i,key))
+                        break
+        if(output_predict):
+            output_predict_sentence_to_file(predict_list,round(correct_num / data_size,4))
         return round(correct_num / data_size,4)
-def output_error_sentence_to_file(error_list):
+
+def output_predict_sentence_to_file(error_list,correct_rate):
     f = open(gv.conf.get("param","path_test"))
     sentences = f.read().split('\n')
     f.close()
-    error_sens = []
+    f = open(gv.conf.get("param","path_eval_result"),'w')
+    string = 'Total correct rate : ' + str(correct_rate) +'\n\n'
+    f.write(string)
     for idx,label in error_list:
-        error_sens.append((sentences[idx],label))
-    error_sens = np.array(error_sens)
-    error_sens.tofile(conf.get("param","path_eval_result"),sep='\n')
+        string = 'predict:'+label+ '    '+sentences[idx]  +'\n'
+        f.writelines(string)
+    f.write(string)
+    f.close()
 
 
 
@@ -126,7 +129,7 @@ def test():
     model.to('cpu')
 
     # test the model
-    acc = model.test_model(model.test_vecs, model.test_label,output_error=True)
+    acc = model.test_model(model.test_vecs, model.test_label, output_predict=True)
     print('test_acc: ', acc)
 
 
