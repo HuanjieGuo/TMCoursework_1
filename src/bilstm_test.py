@@ -192,12 +192,12 @@ def train_Bilstm():
     rnn_ = BiLSTMTagger(len(word2idx), int(conf.get("param", "word_embedding_dim")), 100)
 
 
-    if conf.get('param','pre_train'):
+    if bool(conf.get('param','pre_train')):
         word2vec = w2v.read_word2vec(conf.get("param","path_pre_emb"))
         vocab = torch.tensor(word2vec)
         pretrained_embedding = vocab
         print('pretrained_embedding:', pretrained_embedding.shape)
-        rnn_.embedding.from_pretrained(pretrained_embedding,freeze=conf.get('param','freeze'))
+        rnn_.embedding.from_pretrained(pretrained_embedding,freeze=bool(conf.get('param','freeze')))
 
     device = 'cpu'
     optimizer = optim.Adam(rnn_.parameters(), lr=float(conf.get("param","lr_param")))
