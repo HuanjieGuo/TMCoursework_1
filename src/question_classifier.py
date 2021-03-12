@@ -18,6 +18,7 @@ import torch
 from src import global_value as gv
 import argparse
 from src import bow_nn
+from src import bilistm_nn
 
 torch.manual_seed(1)
 
@@ -34,7 +35,7 @@ gv.conf.read(args.config)
 if(args.train):
     # do the train function
     if(gv.conf.get("param","model")=="bow"):
-        bilistm_nn.train()
+        bow_nn.train()
     elif (gv.conf.get("param","model")=="bilstm"):
         bilistm_nn.train()
 
@@ -42,11 +43,7 @@ if(args.train):
 if(args.test):
     # do the test function
     if(gv.conf.get("param","model")=="bow"):
-        bilistm_nn.test()
+        bow_nn.test()
     elif (gv.conf.get("param","model")=="bilstm"):
         bilistm_nn.train()
 
-
-if __name__ == '__main__':
-    # print(conf.get('param', 'model'))
-    pass

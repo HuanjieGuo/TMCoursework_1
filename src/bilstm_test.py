@@ -8,7 +8,6 @@ from src.preprocessing import process_train_set,process_new_dataset
 from src import word2vec as w2v
 from src import classifier
 from src.global_value import conf
-import src.question_classifier
 
 torch.manual_seed(1)
 random.seed(1)
@@ -191,6 +190,7 @@ def train_Bilstm():
 
 
     rnn_ = BiLSTMTagger(len(word2idx), int(conf.get("param", "word_embedding_dim")), 100)
+
 
     if conf.get('param','pre_train'):
         word2vec = w2v.read_word2vec(conf.get("param","path_pre_emb"))

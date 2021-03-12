@@ -2,6 +2,7 @@
 
 from collections import Counter
 from src import word2vec
+from src import global_value as gv
 
 # 1 remove all the '?' of each sentence
 # 2 split every line into 2 lists : label and sentences
@@ -75,7 +76,7 @@ def process_train_set(path):
         data = f.readlines()
         labels, sentences = labels_extraction(data)
         sentences = remove_punctuations(sentences)
-        if lowercase:
+        if bool(gv.conf.get('param','lowercase')):
             sentences = to_lower_case(remove_stop_words(sentences))
         sorted_words = make_vocabulary(sentences)
         word_idx, _ = word2vec.create_dict(sorted_words)

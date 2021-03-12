@@ -4,7 +4,7 @@ import torch.optim as optim
 from torch.autograd import Variable
 import numpy as np
 from src.global_value import conf
-from src import Bilstm_test1
+from src import bilstm_test
 torch.manual_seed(1)
 
 
@@ -89,7 +89,7 @@ def readFile(file):
 
 
 def train():
-    Bilstm_test1.train_Bilstm()
+    bilstm_test.train_Bilstm()
     train_sentence_vectors, train_labels = readFile("./train_.txt")
     dev_sentence_vectors, dev_labels = readFile("./dev_.txt")
     test_sentence_vectors, test_labels = readFile("./test_.txt")
