@@ -5,7 +5,7 @@ from torch.autograd import Variable
 import numpy as np
 from src import sentence_vector
 from src.global_value import conf
-from torch.nn import functional as F
+from src import global_value as gv
 torch.manual_seed(1)
 
 
@@ -29,6 +29,7 @@ class QuestionClassifier(nn.Module):
 
         self.test_vecs = []
         self.test_label = []
+        self.label_to_ix = {}
 
     def forward(self, input):
         out = self.f1(input)
@@ -64,6 +65,11 @@ class QuestionClassifier(nn.Module):
 
             if label == int(index):
                 correct_num += 1
+            # else:
+            #     for key in self.label_to_ix:
+            #         if label==self.label_to_ix[key]:
+            #             print(key)
+            #             break
 
         return round(correct_num / data_size,4)
 
@@ -96,6 +102,7 @@ def train():
     # save test data
     model.test_vecs = test_sentence_vectors
     model.test_label = test_labels
+    model.label_to_ix = gv.label_to_ix
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)
         # # 计算验证集准确率

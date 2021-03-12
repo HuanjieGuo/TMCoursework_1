@@ -5,6 +5,7 @@ from src.tokenization import lower_first_letter,read_stoplist
 import torch
 from src.tokenization import tokenization
 from src.word_embeddings import get_word_embedding
+from src import global_value as gv
 
 '''
 输入：句子矩阵 n*token
@@ -71,6 +72,7 @@ def get_label_number_to_idx(train_labels, dev_labels, test_labels):
     for label in train_labels + test_labels+dev_labels:
         if label not in label_to_ix:
             label_to_ix[label] = len(label_to_ix)
+    gv.label_to_ix = label_to_ix
     train_labels_idxs = []
     dev_labels_idxs = []
     test_labels_idxs = []
