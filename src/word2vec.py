@@ -210,3 +210,5 @@ if __name__ == '__main__':
     #print(len(sorted_words))
 
     word2vec = train(len(sorted_words), 200, sentences_in_idx, idx_word)
+    output_embedding('../data/word2vec.txt', word2vec)
+    print(word2vec.shape)
