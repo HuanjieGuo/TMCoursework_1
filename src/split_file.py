@@ -2,9 +2,7 @@ from src.global_value import conf
 import random
 import os
 '''
-descript:
-Run this function and it will split the train_5500.txt
-into dev.txt and train.txt
+Split the 'train_5500.txt' into train.txt and dev.txt with a ratio of 9:1
 '''
 def get_train_dev():
     # open the data file
@@ -29,11 +27,18 @@ def get_train_dev():
     file.close()
 
 '''
-param:
+split data into two sets with a ratio
+
+input:
 full_list: total data
+shuffle: do you wish to shuffle the data before split
 ratio: 0-1, the ratio of the first set.
+
+return:
+sublist1
+sublist2
 '''
-def random_split(full_list, shuffle=False, ratio=0):
+def random_split(full_list, shuffle=True, ratio=0):
     n_total = len(full_list)
     offset = int(n_total * ratio)
     if n_total == 0 or offset < 1:

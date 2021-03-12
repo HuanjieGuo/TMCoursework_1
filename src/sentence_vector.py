@@ -15,6 +15,17 @@ from src import global_value as gv
 4. 把累加的vector除以句子中的token个数，等到最终句子的vector
 输出：多个句子的向量
 '''
+'''
+Use bag of word to sum all the vector of the tokens in one sentence and devide the count of token.
+
+input:
+tokens : a token list of a sentence
+wordToIdx: a map that the key is token, and value is the idx of token in wordVec
+wordVec: vectors matrix [n,vector_dimension] 
+
+return :
+vector_of_sentence: a vector that can represent the sentence.
+'''
 def make_bow_vector(tokens,wordToIdx,wordVec):
     vec = np.zeros(int(conf.get("param","word_embedding_dim")))
     count = 0
@@ -27,21 +38,38 @@ def make_bow_vector(tokens,wordToIdx,wordVec):
     vec = torch.from_numpy(vec)
     return vec.view(1, -1)
 
+'''
+Use a for iteration to call the 'make_bow_vector' function and append its result to a list
+
+input:
+sentences: a list of sentence
+wordToIdx: a map that the key is token, and value is the idx of token in wordVec
+wordVec: vectors matrix [n,vector_dimension] 
+
+return:
+sentences_vector_list: a list of sentences' vector
+'''
 def multi_sentences_to_vectors(sentences,wordToIdx,wordVec):
     list = []
     for tokens in sentences:
         list.append(make_bow_vector(tokens,wordToIdx,wordVec))
     return list
-'''
-本文件中，目前对initialised_word_vector进行了测试
-'''
-def refactor(sen, labels):
-    data = []
-    for i in range(0, len(labels)):
-        data.append((sen[i], labels[i]))
-    return data
 
+'''
+choose what kind of vector you want to get and it will return you train, dev and test data
 
+input:
+type: randomly or pre_train
+freeze: True or False
+
+return:
+train_sentence_vectors
+train_labels
+dev_sentence_vectors
+dev_labels
+test_sentence_vectors
+test_labels
+'''
 def bag_of_word_sentences(type='randomly',freeze=True):
     if type not in ['randomly','pre_train']: return
     train_labels, train_sentences = sentence_processing(conf.get('param', 'path_train'))
@@ -67,6 +95,19 @@ def bag_of_word_sentences(type='randomly',freeze=True):
 
     return train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels
 
+'''
+transform label form string to corresponding index
+
+input:
+train_labels
+dev_labels
+test_labels
+
+return:
+train_labels_idxs : label index
+dev_labels_idxs
+test_labels_idxs
+'''
 def get_label_number_to_idx(train_labels, dev_labels, test_labels):
     label_to_ix = {}
     for label in train_labels + test_labels+dev_labels:

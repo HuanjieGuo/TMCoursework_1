@@ -7,11 +7,15 @@ from src.tokenization import tokenization,read_stoplist
 from src.global_value import conf
 torch.manual_seed(1)
 '''
+randomly generate all vector of the tokens
+
 input:
 tokens: token list
 threshold: the token whose count is below threshold will be delete.
-this function is used to generate vectors of the corpus
-output: the vectors of words
+
+return: 
+word_vectors: the vectors of words
+wordToIx: a map that the key is the word, and value is its corresponding index.
 '''
 def randomly_initialised_vectors(tokens=None,threshold=None):
     wordCountDict = dict(zip(*np.unique(tokens, return_counts=True)))
@@ -31,7 +35,9 @@ def randomly_initialised_vectors(tokens=None,threshold=None):
     word_vectors = np.array(word_vectors)
     return word_vectors,wordToIx
 
+'''
 
+'''
 def get_word_embedding(tokens, type='randomly', freeze=True,path=None):
     if type == 'randomly':
         wordVec,wordToIdx =  randomly_initialised_vectors(tokens, threshold=5)
@@ -44,8 +50,11 @@ def get_word_embedding(tokens, type='randomly', freeze=True,path=None):
 
 
 '''
-输入
-拿到预训练的单词向量
+To generate vector of tokens from pre_train model.
+
+return: 
+word_vectors: the vectors of words
+wordToIx: a map that the key is the word, and value is its corresponding index.
 '''
 def get_pre_train_vector():
     print('Please wait, pre-train...')

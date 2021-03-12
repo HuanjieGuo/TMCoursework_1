@@ -10,10 +10,9 @@ torch.manual_seed(1)
 
 
 '''
-分类器
-目前网络有一层隐藏层
-输入层数量为 配置文件里word_embedding_dim
-输出层数量为 label的种类数
+classifier
+input layer: word_embedding_dim
+output layer: count(unique label)
 '''
 class QuestionClassifier(nn.Module):
     def __init__(self, num_labels):
@@ -71,9 +70,9 @@ class QuestionClassifier(nn.Module):
                             error_list.append((i,key))
                             break
         if(output_error):
-            outputErrorSentenceToFile(error_list)
+            output_error_sentence_to_file(error_list)
         return round(correct_num / data_size,4)
-def outputErrorSentenceToFile(error_list):
+def output_error_sentence_to_file(error_list):
     f = open(gv.conf.get("param","path_test"))
     sentences = f.read().split('\n')
     f.close()
@@ -81,12 +80,11 @@ def outputErrorSentenceToFile(error_list):
     for idx,label in error_list:
         error_sens.append((sentences[idx],label))
     error_sens = np.array(error_sens)
-    fo = open("../data/error_sentences.txt", "w")
-    fo.write(str(error_sens))
-    fo.close()
+    error_sens.tofile(conf.get("param","path_eval_result"),sep='\n')
 
 
-def readFile(file):
+
+def read_file(file):
     sentence_vectors = []
     labels = []
 
@@ -118,7 +116,7 @@ def train():
     model.label_to_ix = gv.label_to_ix
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)
-        # # 计算验证集准确率
+        # validate the model
         acc = model.test_model(dev_sentence_vectors,dev_labels)
         print('epoch:', epoch, ' dev_acc: ', acc)
     torch.save(model, conf.get("param", "path_model"))
@@ -127,13 +125,13 @@ def test():
     model = torch.load(conf.get('param','path_model'))
     model.to('cpu')
 
-    # 计算测试集
+    # test the model
     acc = model.test_model(model.test_vecs, model.test_label,output_error=True)
     print('test_acc: ', acc)
 
 
 if __name__ == '__main__':
-    # 修改randomly 或者pre_train 选择不同word embeding方法
+    # choose randomly or pre_train here
     train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='pre_train', freeze=True)
 
     output_size = len(set(train_labels))
@@ -141,10 +139,10 @@ if __name__ == '__main__':
 
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)
-        # # 计算验证集准确率
+        # calculate correct rate of validation dataset
         acc = model.test_model(dev_sentence_vectors,dev_labels)
         print('epoch:', epoch, ' dev_acc: ', acc)
-    # 计算测试集
+    # calculate correct rate of test dataset
     acc = model.test_model(test_sentence_vectors, test_labels)
     print('test_acc: ', acc)
 

@@ -28,7 +28,12 @@ tokenization:
 去除token和sentences of token中的停用词、特殊符号
 '''
 
-
+'''
+To read the stop words from file.
+ 
+return:
+stop_list: a list of stop words.
+'''
 def read_stoplist():
     file = conf.get('param', 'stop_words')
     stop_list = []
@@ -38,7 +43,17 @@ def read_stoplist():
             stop_list.append(line)
     return stop_list
 
+'''
+This function is used to split the sentences into tokens.
 
+input:  
+sentences: sentence list 
+stop_list: a array of many stop words
+
+return:
+tokens: token set
+token_of_sentences: each sentence's token
+'''
 def tokenization(sentences, stop_list):
     # split using whitespace
     token_of_sentences = []
@@ -67,7 +82,15 @@ def tokenization(sentences, stop_list):
     token_of_sentences = dellist(token_of_sentences)
     return tokens, token_of_sentences
 
+'''
+Delete ' ' and '``' in the input data
 
+input:
+oldlist: a list that contain ' ' and '``'
+
+return:
+newList: a list without ' ' and '``'
+'''
 # 去除token_of_sentences中的''和'``'
 def dellist(oldlist):
     new2 = []
