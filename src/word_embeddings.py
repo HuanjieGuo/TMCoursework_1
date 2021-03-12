@@ -21,7 +21,7 @@ wordToIx: a map that the key is the word, and value is its corresponding index.
 
 def randomly_initialised_vectors(tokens=None,threshold=None):
     wordCountDict = dict(zip(*np.unique(tokens, return_counts=True)))
-    for k in list(wordCountDict.keys()):  
+    for k in list(wordCountDict.keys()):  # 对字典a中的keys，相当于形成列表list
         if wordCountDict[k] < threshold:
             del wordCountDict[k]
 
