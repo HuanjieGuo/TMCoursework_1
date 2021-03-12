@@ -173,7 +173,7 @@ with open('./a.txt',"w") as f:
             cel = cells[batch].permute(1,0,2)
             cel = cel.reshape(len(cel),-1)
             for i in range(len(cel)):
-                Q = cel[i].data.numpy()  # tensor转换成array
+                Q = cel[i].data.numpy()  
                 np.savetxt(f, Q[None], delimiter=' ', newline='\n')
 '''
 
