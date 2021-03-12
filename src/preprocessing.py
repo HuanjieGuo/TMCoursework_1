@@ -71,7 +71,7 @@ if __name__ == '__main__':
     print(len(sentences))
 
 
-def process_train_set(path):
+def process_train_set(path, lowercase=True):
     with open(path, 'r') as f:
         data = f.readlines()
         labels, sentences = labels_extraction(data)
