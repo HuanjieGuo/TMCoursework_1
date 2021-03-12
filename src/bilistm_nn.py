@@ -5,8 +5,9 @@ from torch.autograd import Variable
 import numpy as np
 from src.global_value import conf
 from src import bilstm_test
-from src.preprocessing import process_train_set
 from src import global_value as gv
+from src.preprocessing import process_train_set
+
 torch.manual_seed(1)
 
 class QuestionClassifier(nn.Module):
@@ -46,7 +47,7 @@ class QuestionClassifier(nn.Module):
         # calculate correct rate
         data_size = len(test_sentence_vectors)
         correct_num = 0
-
+        labels = []
         for i in range(len(test_labels)):
             bow_vec = Variable(test_sentence_vectors[i])
             label = test_labels[i]
@@ -56,9 +57,8 @@ class QuestionClassifier(nn.Module):
 
             if label == int(index):
                 correct_num += 1
-
-        return round(correct_num / data_size,4)
-
+            labels.append(index.data.numpy())
+        return round(correct_num / data_size,4),labels
 
 def readFile(file):
     sentence_vectors = []
@@ -84,7 +84,6 @@ def readFile(file):
 
 
 def train():
-    print('Please wait, loading data...')
     bilstm_test.train_Bilstm()
     train_sentence_vectors, train_labels = readFile("../data/train_.txt")
     dev_sentence_vectors, dev_labels = readFile("../data/dev_.txt")
@@ -98,7 +97,7 @@ def train():
 
     for epoch in range(int(conf.get("param","epoch"))):
         model.train_model(train_sentence_vectors,train_labels)
-        acc = model.test_model(dev_sentence_vectors, dev_labels)
+        acc,labels = model.test_model(dev_sentence_vectors, dev_labels)
         print('epoch:', epoch, 'dev_acc: ', acc)
     torch.save(model, conf.get("param", "path_model"))
 
@@ -129,26 +128,9 @@ def test():
             s += '\n'
             lines.append(s)
         f.writelines(lines)
-        f.write('\nTotal Test Accuracy: ' + str(acc))
-    # #
-    # train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='pre_train')
-    # train_sentence_vectors, train_labels = readFile("./train_.txt")
-    # test_sentence_vectors,test_labels = readFile("./text_.txt")
-
-    # #
-    # output_size = len(set(train_labels))
-    # model = QuestionClassifier(output_size)
-
-    # for epoch in range(int(conf.get("param","epoch"))):
-    #     model.train_model(train_sentence_vectors,train_labels)
-    #     acc = model.test_model(test_sentence_vectors, test_labels)
-    #     print('epoch:', epoch, 'test_acc: ', acc)
-
-    # # 计算测试集
-    # acc = model.test_model(test_sentence_vectors, test_labels)
-    # print('test_acc: ', acc)
-
+        
 
 if __name__ == '__main__':
+
     train()
     test()
