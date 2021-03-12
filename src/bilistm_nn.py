@@ -7,13 +7,6 @@ from src.global_value import conf
 from src import bilstm_test
 torch.manual_seed(1)
 
-
-'''
-分类器
-目前网络有一层隐藏层
-输入层数量为 配置文件里word_embedding_dim
-输出层数量为 label的种类数
-'''
 class QuestionClassifier(nn.Module):
     def __init__(self, num_labels):
         super(QuestionClassifier, self).__init__()
