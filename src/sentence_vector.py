@@ -1,9 +1,8 @@
 import numpy as np
 from src.global_value import conf
 from src.preprocessing import sentence_processing
-from src.tokenization import lower_first_letter,read_stoplist
+from src.tokenization import lower_first_letter,read_stoplist,tokenization
 import torch
-from src.tokenization import tokenization
 from src.word_embeddings import get_word_embedding
 from src import global_value as gv
 

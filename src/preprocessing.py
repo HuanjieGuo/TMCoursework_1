@@ -2,7 +2,6 @@
 
 from collections import Counter
 from src import word2vec
-from src import question_classifier
 
 # 1 remove all the '?' of each sentence
 # 2 split every line into 2 lists : label and sentences

@@ -5,7 +5,6 @@ from src import word2vec
 from src.preprocessing import sentence_processing,lower_first_letter
 from src.tokenization import tokenization,read_stoplist
 from src.global_value import conf
-from src import question_classifier
 torch.manual_seed(1)
 '''
 input:

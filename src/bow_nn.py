@@ -51,7 +51,7 @@ class QuestionClassifier(nn.Module):
             loss.backward()
             self.optimizer.step()
 
-    def test_model(self,test_sentence_vectors,test_labels):
+    def test_model(self,test_sentence_vectors,test_labels,output_error=False):
         # calculate correct rate
         data_size = len(test_sentence_vectors)
         correct_num = 0
@@ -65,11 +65,13 @@ class QuestionClassifier(nn.Module):
             if label == int(index):
                 correct_num += 1
             else:
-                for key in self.label_to_ix:
-                    if int(index)==self.label_to_ix[key]:
-                        error_list.append((i,key))
-                        break
-        outputErrorSentenceToFile(error_list)
+                if(output_error):
+                    for key in self.label_to_ix:
+                        if int(index)==self.label_to_ix[key]:
+                            error_list.append((i,key))
+                            break
+        if(output_error):
+            outputErrorSentenceToFile(error_list)
         return round(correct_num / data_size,4)
 def outputErrorSentenceToFile(error_list):
     f = open(gv.conf.get("param","path_test"))
@@ -126,7 +128,7 @@ def test():
     model.to('cpu')
 
     # 计算测试集
-    acc = model.test_model(model.test_vecs, model.test_label)
+    acc = model.test_model(model.test_vecs, model.test_label,output_error=True)
     print('test_acc: ', acc)
 
 

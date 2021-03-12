@@ -15,7 +15,6 @@ tokenization：
 from src.preprocessing import sentence_processing, lower_first_letter
 import re
 from src.preprocessing import conf
-from src import question_classifier
 '''
 read_stoplist()
 作用：读取stop_words.txt中的停用词，并保存为list
