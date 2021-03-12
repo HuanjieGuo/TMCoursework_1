@@ -6,15 +6,6 @@ import torch
 from src.word_embeddings import get_word_embedding
 from src import global_value as gv
 
-
-'''
-输入：句子矩阵 n*token
-1. 遍历句子每个token
-2. 如果token存在高频字典，vector加上这个单词对应的随机向量
-3. 如果token不存在于高频字典, vector加上 #UNK 的随机向量，wordVec[0]
-4. 把累加的vector除以句子中的token个数，等到最终句子的vector
-输出：多个句子的向量
-'''
 '''
 Use bag of word to sum all the vector of the tokens in one sentence and devide the count of token.
 
