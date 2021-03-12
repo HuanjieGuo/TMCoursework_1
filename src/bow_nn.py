@@ -55,23 +55,34 @@ class QuestionClassifier(nn.Module):
         # calculate correct rate
         data_size = len(test_sentence_vectors)
         correct_num = 0
-
+        error_list = []
         for i in range(len(test_labels)):
             bow_vec = Variable(test_sentence_vectors[i])
             label = test_labels[i]
             output = self(bow_vec)
 
             pre_max_poss, index = torch.max(output, 1)
-
             if label == int(index):
                 correct_num += 1
-            # else:
-            #     for key in self.label_to_ix:
-            #         if label==self.label_to_ix[key]:
-            #             print(key)
-            #             break
-
+            else:
+                for key in self.label_to_ix:
+                    if int(index)==self.label_to_ix[key]:
+                        error_list.append((i,key))
+                        break
+        outputErrorSentenceToFile(error_list)
         return round(correct_num / data_size,4)
+def outputErrorSentenceToFile(error_list):
+    f = open(gv.conf.get("param","path_test"))
+    sentences = f.read().split('\n')
+    f.close()
+    error_sens = []
+    for idx,label in error_list:
+        error_sens.append((sentences[idx],label))
+    error_sens = np.array(error_sens)
+    fo = open("../data/error_sentences.txt", "w")
+    fo.write(str(error_sens))
+    fo.close()
+
 
 def readFile(file):
     sentence_vectors = []
