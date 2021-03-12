@@ -1,6 +1,6 @@
 # By Maxine
 
-from src import preprocessing
+import preprocessing
 from collections import Counter
 import random
 
@@ -134,10 +134,8 @@ def cosine_similarity(embedding, valid_size=16, valid_window=100):
     magnitudes = embed_vectors.pow(2).sum(dim=1).sqrt().unsqueeze(0)
 
     # pick N words from our ranges (0,window) and (1000,1000+window). lower id implies more frequent
-    valid_examples = np.array(random.sample(
-        range(valid_window), valid_size//2))
-    valid_examples = np.append(valid_examples, random.sample(
-        range(1000, 1000+valid_window), valid_size//2))
+    valid_examples = np.array(random.sample(range(valid_window), valid_size//2))
+    valid_examples = np.append(valid_examples, random.sample(range(1000, 1000+valid_window), valid_size//2))
     valid_examples = torch.LongTensor(valid_examples).to('cpu')
 
     valid_vectors = embedding(valid_examples)
@@ -175,18 +173,26 @@ def train(vocabulary_size, embedding_dim, sentences, idx_word, batch_size=200, e
             optimizer.step()
 
             if steps % 100 == 0:
-                #print("Epoch: {}/{}".format(e+1, epochs))
+                # print("Epoch: {}/{}".format(e+1, epochs))
                 # avg batch loss at this point in training
-               # print("Loss: ", loss.item())
+                # print("Loss: ", loss.item())
                 valid_examples, valid_similarities = cosine_similarity(model.in_embedding_layer)
                 _, closest_idxes = valid_similarities.topk(5)
 
                 valid_examples, closest_idxes = valid_examples.to('cpu'), closest_idxes.to('cpu')
                 for i, valid_idx in enumerate(valid_examples):
                     closest_words = [idx_word[idx.item()] for idx in closest_idxes[i]][1:]
-                    #print(idx_word[valid_idx.item()] + " | " + ', '.join(closest_words))
-                #print("...\n")
+                    # print(idx_word[valid_idx.item()] + " | " + ', '.join(closest_words))
+                # print("...\n")
     return model.in_embedding_layer.weight.to('cpu').data.numpy()
+
+
+def output_embedding(path, word2vec):
+    np.savetxt(path, word2vec)
+
+
+def read_word2vec(path):
+    return np.loadtxt(path)
 
 
 if __name__ == '__main__':

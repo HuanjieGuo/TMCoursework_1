@@ -75,7 +75,8 @@ def process_train_set(path):
         data = f.readlines()
         labels, sentences = labels_extraction(data)
         sentences = remove_punctuations(sentences)
-        sentences = to_lower_case(remove_stop_words(sentences))
+        if lowercase:
+            sentences = to_lower_case(remove_stop_words(sentences))
         sorted_words = make_vocabulary(sentences)
         word_idx, _ = word2vec.create_dict(sorted_words)
         sentences_in_idx = word2vec.replace_words_with_idx(sentences, word_idx)
@@ -84,12 +85,13 @@ def process_train_set(path):
         return sentences_in_idx, labels_in_idx, word_idx, label_idx
 
 
-def process_new_dataset(word_idx, label_idx, path):
+def process_new_dataset(word_idx, label_idx, path, lowercase=True):
     with open(path, 'r') as f:
         data = f.readlines()
         labels, sentences = labels_extraction(data)
         sentences = remove_punctuations(sentences)
-        sentences = to_lower_case(remove_stop_words(sentences))
+        if lowercase:
+            sentences = to_lower_case(remove_stop_words(sentences))
         labels_in_idx = []
         for label in labels:
             if label in label_idx:
@@ -172,19 +174,22 @@ def make_vocabulary(sentences):
     return vocabulary
 
 
-def get_preprocessed_sentences():
+def get_preprocessed_sentences(lowercase=True):
     with open('../data/train.txt', 'r') as f:
         data = f.readlines()
         _, sentences = labels_extraction(data)
         sentences = remove_punctuations(sentences)
         sentences = remove_stop_words(sentences)
-        return to_lower_case(sentences)
+        if lowercase:
+            return to_lower_case(sentences)
+        else:
+            return sentences
 
 
 # print(get_preprocessed_sentences())
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # with open('./train.txt', 'r') as f:
     #     data = f.readlines()
     #     labels, sentences = labels_extraction(data)
