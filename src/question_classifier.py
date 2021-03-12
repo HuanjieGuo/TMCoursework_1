@@ -22,11 +22,9 @@ from src import bow_nn
 torch.manual_seed(1)
 
 parser = argparse.ArgumentParser(description='manual to this script')
-parser.add_argument('--config', help='The path of the configuration file',type=str, default='../data/bow.config')
-parser.add_argument("--train", help="To train the model",
-                    action="store_true")
-parser.add_argument("--test", help="To test the model",
-                    action="store_true")
+parser.add_argument('--config', help='The path of the configuration file', type=str, default='../data/bow.config')
+parser.add_argument("--train", help="To train the model", action="store_true")
+parser.add_argument("--test", help="To test the model", action="store_true")
 
 args = parser.parse_args()
 
@@ -36,13 +34,18 @@ gv.conf.read(args.config)
 if(args.train):
     # do the train function
     if(gv.conf.get("param","model")=="bow"):
-        bow_nn.train()
+        bilistm_nn.train()
+    elif (gv.conf.get("param","model")=="bilstm"):
+        bilistm_nn.train()
 
 
 if(args.test):
     # do the test function
     if(gv.conf.get("param","model")=="bow"):
-        bow_nn.test()
+        bilistm_nn.test()
+    elif (gv.conf.get("param","model")=="bilstm"):
+        bilistm_nn.train()
+
 
 if __name__ == '__main__':
     # print(conf.get('param', 'model'))
