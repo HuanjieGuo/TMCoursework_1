@@ -8,13 +8,14 @@ tokenization：
 '''
 该文件的使用，基于preProcessing，流程：
 1. 划分：labels, sentences = sentenceProcessing(conf.get('param', 'path_train'))
-2. 小写化首字母：sentences = lower_first_letter(sentences)
+2. 小写化首字母：sentences = lower_first_letter(sentences,conf.get('param','lowercase'))
 3. Tokenization: tokens,token_of_sentences = tokenization(sentences, stop_list)
 '''
 
 from src.preprocessing import sentence_processing, lower_first_letter
 import re
 from src.preprocessing import conf
+from src import question_classifier
 '''
 read_stoplist()
 作用：读取stop_words.txt中的停用词，并保存为list
@@ -83,13 +84,13 @@ def dellist(oldlist):
 '''
 Tokenization 使用流程：
 1 使用pre_processing中的 sentence_processing 取得 lebels和sentences / labels, sentences = sentence_processing(conf.get('param', 'path_train')) /
-2 使用pre_processing中的 lower_first_letter / sentences = lower_first_letter(sentences) /
+2 使用pre_processing中的 lower_first_letter / sentences = lower_first_letter(sentences,conf.get('param','lowercase')) /
 3 取得stop_list： /stop_list = read_stoplist()/
 4 取得tokens和每个句子中的tokens（两个列表）：tokens,token_of_sentences = tokenization(sentences,stop_list)
 '''
 if __name__ == '__main__':
     labels, sentences = sentence_processing(conf.get('param', 'path_train'))
-    sentences = lower_first_letter(sentences)
+    sentences = lower_first_letter(sentences,conf.get('param','lowercase'))
     stop_list = read_stoplist()
     tokens, token_of_sentences = tokenization(sentences, stop_list)
 
