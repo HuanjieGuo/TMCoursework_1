@@ -102,12 +102,32 @@ def train():
 
 
 def test():
+    _, _, _, label2idx = process_train_set('../data/train.txt')
+    idx2label = dict(zip(label2idx.values(), label2idx.keys()))
+
     model = torch.load(conf.get('param', 'path_model'))
     model.to('cpu')
 
     acc = model.test_model(model.test_vecs, model.test_label)
     print('test_acc: ', acc)
 
+    with open('../data/test.txt', 'r') as f:
+        data = f.readlines()
+        labels = []
+        sentences = []
+        for line in data:
+            s = line.split(' ', maxsplit=1)
+            labels.append(s[0])
+            sentences.append(s[1][:-1])
+    with open(gv.conf.get('param','path_eval_result'), "w") as f:
+        lines = ['Question                  Correct Label               Predict Label\n']
+        for i in range(len(sentences)):
+            line = [sentences[i], labels[i], idx2label[int(pre_label[i])]]
+            s = '       '.join(line)
+            s += '\n'
+            lines.append(s)
+        f.writelines(lines)
+        f.write('\nTotal Test Accuracy: ' + str(acc))
     # #
     # train_sentence_vectors,train_labels,dev_sentence_vectors,dev_labels,test_sentence_vectors,test_labels = sentence_vector.bag_of_word_sentences(type='pre_train')
     # train_sentence_vectors, train_labels = readFile("./train_.txt")
