@@ -5,6 +5,8 @@ from torch.autograd import Variable
 import numpy as np
 from src.global_value import conf
 from src import bilstm_test
+from src.preprocessing import process_train_set
+from src import global_value as gv
 torch.manual_seed(1)
 
 class QuestionClassifier(nn.Module):
@@ -108,7 +110,7 @@ def test():
     model = torch.load(conf.get('param', 'path_model'))
     model.to('cpu')
 
-    acc = model.test_model(model.test_vecs, model.test_label)
+    acc,pre_label = model.test_model(model.test_vecs, model.test_label)
     print('test_acc: ', acc)
 
     with open('../data/test.txt', 'r') as f:
